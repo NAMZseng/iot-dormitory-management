@@ -1,0 +1,2 @@
+# IOT_DormitoryManagement
+基于物联网传感通信的宿舍人流管理系统
