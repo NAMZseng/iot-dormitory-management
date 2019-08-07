@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"MAIN.obj",
+"RC522.obj" 
+TO "RC522" 
+RAMSIZE(256) 
