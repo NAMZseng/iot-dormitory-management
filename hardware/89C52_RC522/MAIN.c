@@ -2,9 +2,9 @@
 #include<main.h>
 #include<mfrc522.h>
 
-unsigned char UID[5],Temp[4];
+unsigned char UID[5], Temp[4];
 
-void feeb(){ //寻卡成功响应函数
+void feeb() { //寻卡成功响应函数
 	ff=0;
 	delay_10ms(1);
 	ff=1;
@@ -15,10 +15,11 @@ void Auto_Reader(void){
   while(1){
     if(PcdRequest(0x52,Temp)==MI_OK){  //寻卡，成功后Temp数组为卡类型
       if(PcdAnticoll(UID)==MI_OK){	  //防冲突，UID数组数据为卡序列号
-           CALL_isr_UART();			  //开串口中断将UID数组前四个字节上传到串口调试助手
-		   feeb();                    //调用蜂鸣器提示           
+				CALL_isr_UART();			  //开串口中断将UID数组前四个字节上传到串口调试助手
+				feeb();                 //调用蜂鸣器提示           
       }
-    }else ff = 0;//寻卡失败
+    } 
+		else ff = 0;//寻卡失败
   } 
 }
 
@@ -33,14 +34,14 @@ void InitializeSystem(){
 	EA=1;						//打开总中断
 	TR1=1;		
 	ff = 0;
-    PcdReset();
-    PcdAntennaOff(); 
-    PcdAntennaOn();  
+	PcdReset();
+	PcdAntennaOff(); 
+	PcdAntennaOn();  
 	M500PcdConfigISOType( 'A' );
 }
 
 void isr_UART(void) interrupt 4 using 1{
-    unsigned char i;
+  unsigned char i;
 	if(TI){
 		TI=0;
 		for(i=0;i<4;i++){
@@ -53,6 +54,6 @@ void isr_UART(void) interrupt 4 using 1{
 }
 
 void main( ){   
-    InitializeSystem( );
+  InitializeSystem( );
 	Auto_Reader();
 }

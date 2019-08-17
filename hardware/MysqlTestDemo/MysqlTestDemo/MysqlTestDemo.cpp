@@ -101,12 +101,12 @@ int main()
 		DWORD wCount = 5;//读取的字节数
 		BOOL bReadStat;
 
-		DWORD dwWriteLen = 0; //写入长度 
-		if (!WriteFile(hCom, "A", 2, &dwWriteLen, NULL)) //向串口发送一个A 
-		{
-			printf("串口发送数据失败！\n");
-		}
-		printf("串口发送数据成功！\n");
+		//DWORD dwWriteLen = 0; //写入长度 
+		//if (!WriteFile(hCom, "A", 2, &dwWriteLen, NULL)) //向串口发送一个A 
+		//{
+		//	printf("串口发送数据失败！\n");
+		//}
+		//printf("串口发送数据成功！\n");
 		while (1)
 		{
 			PurgeComm(hCom, PURGE_TXCLEAR | PURGE_RXCLEAR); //清空缓冲区
