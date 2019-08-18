@@ -12,11 +12,12 @@ void feeb() { //寻卡成功响应函数
 }
 
 void Auto_Reader(void){
+	int tar;
   while(1){
     if(PcdRequest(0x52,Temp)==MI_OK){  //寻卡，成功后Temp数组为卡类型
       if(PcdAnticoll(UID)==MI_OK){	  //防冲突，UID数组数据为卡序列号
 				CALL_isr_UART();			  //开串口中断将UID数组前四个字节上传到串口调试助手
-				feeb();                 //调用蜂鸣器提示           
+				feeb();                 //调用蜂鸣器提示 
       }
     } 
 		else ff = 0;//寻卡失败
