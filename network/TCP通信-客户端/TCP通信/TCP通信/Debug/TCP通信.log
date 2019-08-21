@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\study\iot_dormitorymanagement\iot_dormitorymanagement\network\tcp通信-客户端\tcp通信\tcp通信\main.cpp(22): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  d:\windows kits\10\include\10.0.17763.0\um\winsock2.h(1831): note: 参见“inet_addr”的声明
+  TCP通信.vcxproj -> D:\study\IOT_DormitoryManagement\IOT_DormitoryManagement\network\TCP通信-客户端\TCP通信\Debug\TCP通信.exe
