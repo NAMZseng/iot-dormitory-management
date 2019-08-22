@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HadoopNavigator.Project.Settings">
+    <connections>
+      <fsconnection id="01ca9aba-dbf7-4724-a2eb-51be55161602">
+        <database>
+          <name value="QTLAB" />
+          <description value="" />
+          <active value="true" />
+          <os-authentication value="false" />
+          <database-type value="HDFS" />
+          <database-version value="9999.0" />
+          <user value="znr" />
+          <password value="" />
+          <mapreduce-host value="node01" />
+          <mapreduce-port value="8020" />
+          <hdfs-host value="node01" />
+          <hdfs-port value="8020" />
+        </database>
+      </fsconnection>
+    </connections>
+    <general-settings>
+      <regional-settings>
+        <locale value="zh-CN" />
+      </regional-settings>
+      <browser-settings>
+        <browserdisplaymode value="Multiple tabs tree" />
+      </browser-settings>
+    </general-settings>
+  </component>
+</project>
