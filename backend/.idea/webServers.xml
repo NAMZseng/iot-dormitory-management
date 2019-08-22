@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ebad5a8b-e94c-4396-8fc5-2bdb66fcbb97" name="Tencent_CentOS_7" url="http://49.232.57.160">
+        <fileTransfer host="49.232.57.160" port="22" rootFolder="/root/apache-tomcat-8.5.43/webapps" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
