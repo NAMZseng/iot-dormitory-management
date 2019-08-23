@@ -10,7 +10,6 @@
         <param-value>classpath:log4j.properties</param-value>
     </context-param>
 
-
     <!--配置DispatcherServlet-->
     <servlet>
         <servlet-name>Servlet-dispatcher</servlet-name>
