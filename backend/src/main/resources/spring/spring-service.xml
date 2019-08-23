@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!--扫描service包下所有使用注解的类型-->
+    <!--自动扫描指定包下的注解类，并注册到IOC容器中-->
     <context:component-scan base-package="cn.nam.dormitorymanage.backend.service"/>
 
     <!--配置事务管理器-->

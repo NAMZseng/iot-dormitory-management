@@ -22,6 +22,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--自动扫描指定包下的注解类，并注册到IOC容器中-->
     <context:component-scan base-package="cn.nam.dormitorymanage.backend.controller"/>
 
 </beans>
