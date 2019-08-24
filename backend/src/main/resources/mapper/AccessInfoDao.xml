@@ -6,6 +6,6 @@
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.AccessInfoDao">
     <insert id="addAccess">
         insert into access_info(building_num, student_num, access_status)
-        values(#{building_num}, #{student_num}, #{access_status})
+        values(#{buildingNum}, #{studentNum}, #{accessStatus})
     </insert>
 </mapper>
