@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.nam.dormitorymanage.backend.dao.AccessInfoDao">
+    <insert id="addAccess">
+        insert into access_info(building_num, student_num, access_status)
+        values(#{building_num}, #{student_num}, #{access_status})
+    </insert>
+</mapper>

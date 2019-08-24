@@ -1,4 +1,5 @@
-use backend_test;
+CREATE DATABASE `dormitory` CHARACTER SET utf8 COLLATE utf8_general_ci;
+use dormitory;
 
 create table building_info(
   `num` tinyint comment '宿舍楼号',
@@ -7,6 +8,15 @@ create table building_info(
   `chief_tel` char(11) comment '宿舍楼负责人电话',
   primary key(num)
 ) engine=innodb default charset=utf8 comment '宿舍楼信息表';
+
+create table staff_info(
+  `num` int comment '员工工号',
+  `name` char(30) comment '员工姓名',
+  `tel` char(11) comment '员工电话',
+  `building_num` tinyint comment '工作所在的宿舍楼号',
+  `title` char(30) comment '职称',
+  primary key(num)
+)engine=innodb default charset=utf8 comment '宿舍楼职工信息表';
 
 create table student_info(
   `num` int comment '学生学号',
@@ -23,15 +33,15 @@ create table student_info(
 create table access_info(
   `building_num` tinyint comment '出入的宿舍楼号',
   `student_num` int comment '学生学号',
-  `access_time` datetime comment '出入时间',
-  `access_status` char(3)  comment'出入状态，入：in 出：out',
+  `access_time` timestamp default current_timestamp comment '出入时间',
+  `access_status` char(5)  comment'出入状态，入：in 出：out',
   primary key(building_num, student_num, access_time)
 ) engine=innodb default charset=utf8 comment '学生出入宿舍楼记录表';
 
 create table block_info(
   `building_num` tinyint comment '出入的宿舍楼号',
   `student_num` int comment '学生学号',
-  `access_time` datetime  comment '出入时间',
-  `access_status` char(3)  comment '出入状态，入：in 出：out',
+  `access_time`  timestamp default current_timestamp comment '出入时间',
+  `access_status` char(5)  comment '出入状态，入：in 出：out',
   primary key(building_num, student_num, access_time)
 ) engine=innodb default charset=utf8 comment '被阻访问记录表';
