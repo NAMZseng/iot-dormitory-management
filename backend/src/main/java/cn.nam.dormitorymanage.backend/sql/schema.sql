@@ -26,7 +26,7 @@ create table student_info(
   `teacher_name` char(30) comment '班主任',
   `teacher_tel` char(11) comment '班主任电话',
   `building_num` tinyint comment '所在宿舍楼号',
-  `room_num` tinyint comment '房间号',
+  `room_num` smallint comment '房间号',
   primary key(num)
 ) engine=innodb default charset=utf8 comment '学生信息表';
 
@@ -34,7 +34,7 @@ create table access_info(
   `building_num` tinyint comment '出入的宿舍楼号',
   `student_num` int comment '学生学号',
   `access_time` timestamp default current_timestamp comment '出入时间',
-  `access_status` char(5)  comment'出入状态，入：in 出：out',
+  `access_status` char(5) default 'in' comment'出入状态，入：in 出：out',
   primary key(building_num, student_num, access_time)
 ) engine=innodb default charset=utf8 comment '学生出入宿舍楼记录表';
 
@@ -42,6 +42,5 @@ create table block_info(
   `building_num` tinyint comment '出入的宿舍楼号',
   `student_num` int comment '学生学号',
   `access_time`  timestamp default current_timestamp comment '出入时间',
-  `access_status` char(5)  comment '出入状态，入：in 出：out',
   primary key(building_num, student_num, access_time)
 ) engine=innodb default charset=utf8 comment '被阻访问记录表';

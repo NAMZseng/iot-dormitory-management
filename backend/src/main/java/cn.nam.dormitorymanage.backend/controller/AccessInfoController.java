@@ -17,7 +17,7 @@ public class AccessInfoController {
     @Autowired
     private AccessInfoService accessInfoService;
 
-    @RequestMapping("updateAccessInfo")
+    @RequestMapping("/updateAccessInfo")
     @ResponseBody
     public int updateAccessInfo(@RequestParam("buildingNum") int buildingNum,
                        @RequestParam("studentNum") int studentNum,
@@ -25,9 +25,5 @@ public class AccessInfoController {
 
         return accessInfoService.updateAccessInfo(buildingNum, studentNum,accessStatus);
     }
-    @RequestMapping("test")
-    @ResponseBody
-    public int test() {
-        return 11111;
-    }
+
 }

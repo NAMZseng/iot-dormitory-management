@@ -8,4 +8,9 @@
         insert into access_info(building_num, student_num, access_status)
         values(#{buildingNum}, #{studentNum}, #{accessStatus})
     </insert>
+
+    <insert id="addBlock">
+        insert into block_info(building_num, student_num, access_status)
+        values(#{buildingNum}, #{studentNum}, #{accessStatus})
+    </insert>
 </mapper>
