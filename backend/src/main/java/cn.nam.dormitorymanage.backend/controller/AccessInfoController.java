@@ -29,16 +29,14 @@ public class AccessInfoController {
      */
     @RequestMapping("judgeAccess")
     @ResponseBody
-    public int judgeAccess(@RequestParam("buildingNum") int buildingNum,
-                           @RequestParam("cardNum") String cardNum) {
+    public int judgeAccess(@RequestParam("buildingNum") int buildingNum, @RequestParam("cardNum") String cardNum) {
 
         return accessInfoService.judgeAccess(buildingNum, cardNum);
     }
 
     @RequestMapping("test")
     @ResponseBody
-    public int test(@RequestParam("buildingNum") int buildingNum,
-                    @RequestParam("studentNum") int studentNum) {
+    public int test(@RequestParam("buildingNum") int buildingNum, @RequestParam("studentNum") int studentNum) {
 
         return buildingNum + studentNum;
     }
