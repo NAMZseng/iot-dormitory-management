@@ -15,14 +15,22 @@ public class AccessInfoService {
     private AccessInfoDao accessInfoDao;
 
     /**
-     * 更新访问记录表
+     * 根据卡号和宿舍楼号，判断卡号对应的学生是否属于该宿舍楼。
+     * 若属于该宿舍楼，更新出入记录access_info表，并返回1表示通过；
+     * 若不属于，更新被阻记录block_info表，并返回-1表示拒绝。
      *
      * @param buildingNum 宿舍楼号
-     * @param studentNum 学号
-     * @return 接受访问返回1，拒绝访问返回-1
+     * @param studentNum 学生学号
+     * @return 通过 1，拒绝 -1
      */
-    public int updateAccessInfo(int buildingNum, int studentNum) {
-        Integer roomNum = accessInfoDao.judgeAccess(buildingNum, studentNum);
+    public int judgeAccess(int buildingNum, String cardNum) {
+        Integer studentNum = accessInfoDao.getStudnetNum(cardNum);
+        if(studentNum == null) {
+            // 学号不存在
+            return -1;
+        }
+
+        Integer roomNum = accessInfoDao.judgeAccess(buildingNum, studentNum.intValue());
         if (roomNum != null) {
             // 学号与楼号匹配,允许通过
 

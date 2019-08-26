@@ -18,12 +18,21 @@ public class AccessInfoController {
     @Autowired
     private AccessInfoService accessInfoService;
 
+    /**
+     * 学生出入宿舍楼权限判断
+     * url示例:
+     * http://49.232.57.160:8080/DormitoryManage/access/judgeAccess?buildingNum=9&cardNum=e0a01005
+     *
+     * @param buildingNum 宿舍楼号
+     * @param studentNum  学生学号
+     * @return 通过 1，拒绝 -1
+     */
     @RequestMapping("judgeAccess")
     @ResponseBody
-    public int updateAccessInfo(@RequestParam("buildingNum") int buildingNum,
-                                @RequestParam("studentNum") int studentNum) {
+    public int judgeAccess(@RequestParam("buildingNum") int buildingNum,
+                           @RequestParam("cardNum") String cardNum) {
 
-        return accessInfoService.updateAccessInfo(buildingNum, studentNum);
+        return accessInfoService.judgeAccess(buildingNum, cardNum);
     }
 
     @RequestMapping("test")

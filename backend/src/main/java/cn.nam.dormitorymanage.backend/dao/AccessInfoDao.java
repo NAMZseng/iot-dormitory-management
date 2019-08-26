@@ -11,10 +11,18 @@ import org.apache.ibatis.annotations.Param;
 public interface AccessInfoDao {
 
     /**
+     * 根据卡号查询对应的学号
+     *
+     * @param cardNum 卡号
+     * @return 卡号对应的学号，没有则返回null
+     */
+    Integer getStudnetNum(@Param("cardNum") String cardNum);
+
+    /**
      * 判断刷卡学生的学号与楼号是否匹配
      *
-     * @param buildingNum
-     * @param studentNum
+     * @param buildingNum 访问楼号
+     * @param studentNum 学生学号
      * @return 属于该楼返回房间号，否则返回null
      */
     Integer judgeAccess(@Param("buildingNum") int buildingNum, @Param("studentNum") int studentNum);

@@ -5,6 +5,12 @@
 
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.AccessInfoDao">
 
+    <select id="getStudnetNum" resultType="Integer">
+        select student_num from card_info
+        where
+        card_num = #{cardNum}
+    </select>
+
     <select id="judgeAccess" resultType="Integer">
         select room_num from student_info
         where
