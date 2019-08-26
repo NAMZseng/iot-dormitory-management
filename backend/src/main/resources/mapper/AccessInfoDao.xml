@@ -4,13 +4,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.AccessInfoDao">
+
+    <select id="judgeAccess" resultType="Integer">
+        select room_num from student_info
+        where
+        building_num = #{buildingNum} and
+        num = #{studentNum}
+    </select>
+
+    <select id="getPreStatus" resultType="Integer">
+        select access_status from access_info
+        where
+        building_num = #{buildingNum} and
+        student_num = #{studentNum}
+        order by access_time desc
+        limit 1
+    </select>
+
     <insert id="addAccess">
         insert into access_info(building_num, student_num, access_status)
         values(#{buildingNum}, #{studentNum}, #{accessStatus})
     </insert>
 
     <insert id="addBlock">
-        insert into block_info(building_num, student_num, access_status)
-        values(#{buildingNum}, #{studentNum}, #{accessStatus})
+        insert into block_info(building_num, student_num)
+        values(#{buildingNum}, #{studentNum})
     </insert>
 </mapper>

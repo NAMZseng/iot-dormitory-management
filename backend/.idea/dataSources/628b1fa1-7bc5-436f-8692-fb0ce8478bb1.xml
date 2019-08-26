@@ -1139,9 +1139,8 @@
     </column>
     <column id="299" parent="230" name="access_status">
       <Position>4</Position>
-      <Comment>出入状态，入：in 出：out</Comment>
-      <DataType>char(5)|0s</DataType>
-      <DefaultExpression>&apos;in&apos;</DefaultExpression>
+      <Comment>出入状态，入:1 出-1</Comment>
+      <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="300" parent="230" name="PRIMARY">
