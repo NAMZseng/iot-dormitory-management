@@ -20,12 +20,12 @@ public class AccessInfoService {
      * 若不属于，更新被阻记录block_info表，并返回-1表示拒绝。
      *
      * @param buildingNum 宿舍楼号
-     * @param studentNum 学生学号
+     * @param studentNum  学生学号
      * @return 通过 1，拒绝 -1
      */
     public int judgeAccess(int buildingNum, String cardNum) {
         Integer studentNum = accessInfoDao.getStudnetNum(cardNum);
-        if(studentNum == null) {
+        if (studentNum == null) {
             // 学号不存在
             return -1;
         }
@@ -35,7 +35,7 @@ public class AccessInfoService {
             // 学号与楼号匹配,允许通过
 
             Integer preStatus = accessInfoDao.getPreStatus(buildingNum, studentNum);
-            if(preStatus == null) {
+            if (preStatus == null) {
                 // 该学生为第一次进入宿舍楼
                 return accessInfoDao.addAccess(buildingNum, studentNum, 1);
             } else {

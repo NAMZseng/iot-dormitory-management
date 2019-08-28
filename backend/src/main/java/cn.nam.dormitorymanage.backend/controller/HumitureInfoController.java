@@ -29,7 +29,8 @@ public class HumitureInfoController {
      */
     @RequestMapping("addData")
     @ResponseBody
-    public int addData(@RequestParam("macAddr") String macAddress, @RequestParam("temperature") float temperature,
+    public int addData(@RequestParam("macAddr") String macAddress,
+                       @RequestParam("temperature") float temperature,
                        @RequestParam("humidity") float humidity) {
         return humitureInfoService.addData(macAddress, temperature, humidity);
     }

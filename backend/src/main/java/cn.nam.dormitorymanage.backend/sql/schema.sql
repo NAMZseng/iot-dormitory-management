@@ -12,12 +12,13 @@ create table building_info(
 create table staff_info(
   `num` int comment '员工工号',
   `name` char(30) comment '员工姓名',
-  `tel` char(11) comment '员工电话',
+  `tel` char(11) unique comment '员工电话',
   `building_num` tinyint comment '工作所在的宿舍楼号',
   `title` char(30) comment '职称',
   `password` char(30) default '123456' comment 'app登陆密码',
   primary key(num)
 )engine=innodb default charset=utf8 comment '宿舍楼职工信息表';
+
 
 create table student_info(
   `num` int comment '学生学号',
@@ -47,12 +48,10 @@ create table block_info(
 ) engine=innodb default charset=utf8 comment '被阻访问记录表';
 
 create table card_info(
-  `card_num` char(8) comment '卡号',
+  `card_num` int comment '卡号',
   `student_num` int comment '学生学号',
   primary key(card_num)
 ) engine=innodb default charset=utf8 comment '一卡通注册信息表';
-
-insert into card_info values ('e0a01005', 1607094201);
 
 create table sensors_info(
    `mac_address` char(16) comment '传感器的MAC地址',
@@ -60,6 +59,8 @@ create table sensors_info(
    `location` char(15) comment '楼内的位置，如二层东',
     primary key(mac_address)
 ) engine=innodb default charset=utf8 comment '传感器信息表';
+
+truncate table card_info;
 
 create table humiture_info(
    `mac_address` char(16) comment '传感器的MAC地址',

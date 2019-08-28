@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.concurrent.*;
+
 /**
  * @author Nanrong Zeng
  * @version 1.0
@@ -21,7 +23,8 @@ public class AccessInfoController {
     /**
      * 学生出入宿舍楼权限判断
      * url示例:
-     * http://49.232.57.160:8080/DormitoryManage/access/judgeAccess?buildingNum=9&cardNum=e0a01005
+     * http://49.232.57.160:8080/DormitoryManage/access/judgeAccess?
+     * buildingNum=9&cardNum=e0a01005
      *
      * @param buildingNum 宿舍楼号
      * @param studentNum  学生学号
@@ -29,15 +32,11 @@ public class AccessInfoController {
      */
     @RequestMapping("judgeAccess")
     @ResponseBody
-    public int judgeAccess(@RequestParam("buildingNum") int buildingNum, @RequestParam("cardNum") String cardNum) {
+    public int judgeAccess(@RequestParam("buildingNum") int buildingNum,
+                           @RequestParam("cardNum") String cardNum) {
 
         return accessInfoService.judgeAccess(buildingNum, cardNum);
     }
 
-    @RequestMapping("test")
-    @ResponseBody
-    public int test(@RequestParam("buildingNum") int buildingNum, @RequestParam("studentNum") int studentNum) {
-
-        return buildingNum + studentNum;
-    }
 }
+

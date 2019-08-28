@@ -3,7 +3,7 @@ package cn.nam.dormitorymanage.backend.entity;
 import java.util.Date;
 
 /**
- * 学生出入宿舍楼记录表实体
+ * 学生出入宿舍楼记录实体
  *
  * @author Nanrong Zeng
  * @version 1.0
