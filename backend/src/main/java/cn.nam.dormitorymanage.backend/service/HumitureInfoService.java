@@ -1,8 +1,11 @@
 package cn.nam.dormitorymanage.backend.service;
 
 import cn.nam.dormitorymanage.backend.dao.HumitureInfoDao;
+import cn.nam.dormitorymanage.backend.entity.HumitureInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Nanrong Zeng
@@ -23,5 +26,15 @@ public class HumitureInfoService {
      */
     public int addData(String macAddress, float temperature, float humidity) {
         return humitureInfoDao.addData(macAddress, temperature, humidity);
+    }
+
+    /**
+     * 获取指代楼号当天的温湿度数据
+     *
+     * @param buildingNum 宿舍楼号
+     * @return List<HumitureInfo>
+     */
+    public List<HumitureInfo> getTodayData(int buildingNum, String dawnTime) {
+        return humitureInfoDao.getTodayData(buildingNum, dawnTime);
     }
 }

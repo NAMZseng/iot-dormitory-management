@@ -19,7 +19,6 @@ create table staff_info(
   primary key(num)
 )engine=innodb default charset=utf8 comment '宿舍楼职工信息表';
 
-
 create table student_info(
   `num` int comment '学生学号',
   `name` char(30) comment '学生姓名',
@@ -59,8 +58,6 @@ create table sensors_info(
    `location` char(15) comment '楼内的位置，如二层东',
     primary key(mac_address)
 ) engine=innodb default charset=utf8 comment '传感器信息表';
-
-truncate table card_info;
 
 create table humiture_info(
    `mac_address` char(16) comment '传感器的MAC地址',

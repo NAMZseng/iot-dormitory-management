@@ -1,11 +1,16 @@
 package cn.nam.dormitorymanage.backend.controller;
 
+import cn.nam.dormitorymanage.backend.entity.HumitureInfo;
 import cn.nam.dormitorymanage.backend.service.HumitureInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author Nanrong Zeng
@@ -19,9 +24,7 @@ public class HumitureInfoController {
 
     /**
      * 添加温湿度数据
-     * url示例
-     * http://49.232.57.160:8080/DormitoryManage/humiture/addData?
-     * macAddr=9C625305004B1200&temperature=30.360001&humidity=67.099998
+     *
      * @param macAddress  传感器MAC地址
      * @param temperature 温度
      * @param humidity    相对湿度
@@ -35,4 +38,21 @@ public class HumitureInfoController {
         return humitureInfoService.addData(macAddress, temperature, humidity);
     }
 
+    /**
+     * 获取指代楼号当天的温湿度数据
+     *
+     * @param buildingNum 宿舍楼号
+     * @return List<HumitureInfo>
+     */
+    @RequestMapping("getData")
+    @ResponseBody
+    public List<HumitureInfo> getData(@RequestParam("buildingNum") int buildingNum) {
+
+        // 获取当天凌晨的时间
+        SimpleDateFormat sdf = new SimpleDateFormat();
+        sdf.applyPattern("yyyy-MM-dd");
+        String dawnTime = sdf.format(new Date()).toString();
+
+        return humitureInfoService.getTodayData(buildingNum, dawnTime);
+    }
 }
