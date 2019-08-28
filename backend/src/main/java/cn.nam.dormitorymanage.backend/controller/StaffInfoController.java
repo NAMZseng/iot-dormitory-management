@@ -26,7 +26,7 @@ public class StaffInfoController {
      * @param password 登陆密码
      * @return 手机密码匹配，返回职工信息实体类对象；否则，返回null
      */
-    @RequestMapping("/login")
+    @RequestMapping("login")
     @ResponseBody
     public StaffInfo login(@RequestParam("tel") String tel,
                            @RequestParam("password") String password) {
@@ -44,7 +44,7 @@ public class StaffInfoController {
      * @param newPassword 新密码
      * @return 手机号与旧密码匹配，修改成功返回1；匹配失败返回-1
      */
-    @RequestMapping("/updatePassword")
+    @RequestMapping("updatePassword")
     @ResponseBody
     public int updatePassword(@RequestParam("tel") String tel,
                               @RequestParam("oldPassword") String oldPassword,
