@@ -6,27 +6,30 @@
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.StaffInfoDao">
 
     <select id="getStaffInfo" resultType="StaffInfo">
-        select num, name, tel, building_num, title, password
-        from staff_info
-        where tel = #{tel} and password = #{password}
+        SELECT num, name, tel, building_num, title, password
+        FROM staff_info
+        WHERE tel = #{tel}
+            AND password = #{password}
     </select>
 
     <update id="upadatePassord">
-        update staff_info
-        set password = #{newPassword}
-        where tel = #{tel} and password = #{oldPassword}
+        UPDATE staff_info
+        SET password = #{newPassword}
+        WHERE tel = #{tel}
+            AND password = #{oldPassword}
     </update>
 
     <select id="fingTel" resultType="String">
-        select tel from staff_info
-        where
-        tel = #{tel}
+        SELECT tel
+        FROM staff_info
+        WHERE tel = #{tel}
     </select>
 
     <update id="updateTel">
-        update staff_info
-        set tel = #{newTel}
-        where tel = #{oldTel} and password = #{password}
+        UPDATE staff_info
+        SET tel = #{newTel}
+        WHERE tel = #{oldTel}
+            AND password = #{password}
     </update>
 
 </mapper>

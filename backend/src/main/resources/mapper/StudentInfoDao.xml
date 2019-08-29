@@ -6,9 +6,10 @@
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.StudentInfoDao">
 
     <select id="getStudents" resultType="StudentInfo">
-        select num,name,school,major,teacher_name,teacher_tel,building_num,room_num
-        from student_info
-        where building_num = #{buildingNum}
+        SELECT num, name, school, major, teacher_name
+            ,teacher_tel, building_num, room_num
+        FROM student_info
+        WHERE building_num = #{buildingNum}
     </select>
 
 </mapper>

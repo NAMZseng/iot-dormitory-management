@@ -6,23 +6,18 @@
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.HumitureInfoDao">
 
     <insert id="addData">
-        insert into humiture_info(mac_address, temperature, humidity)
-        values(#{macAddress}, #{temperature}, #{humidity})
+        INSERT INTO humiture_info (mac_address, temperature, humidity)
+        VALUES (#{macAddress}, #{temperature}, #{humidity})
     </insert>
 
     <select id="getTodayData" resultType="HumitureInfo">
-        select
-            a.mac_address,
-            building_num,
-            location,
-            collect_time,
-            temperature,
-            humidity
-        from sensors_info a inner join humiture_info b
-        on a.mac_address=b.mac_address
-        where a.building_num = #{buildingNum} and
-              collect_time >= #{dawnTime}
-        order by collect_time desc
+        SELECT a.mac_address, building_num, location, collect_time, temperature
+            ,humidity
+        FROM sensors_info a
+            INNER JOIN humiture_info b ON a.mac_address = b.mac_address
+        WHERE a.building_num = #{buildingNum}
+            AND collect_time >= #{dawnTime}
+        ORDER BY collect_time DESC
     </select>
 
 </mapper>

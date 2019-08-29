@@ -68,4 +68,3 @@ create table humiture_info(
    `humidity` float comment '相对湿度，单位',
    primary key(mac_address, collect_time)
 ) engine=innodb default charset=utf8 comment '温湿度数据表';
-

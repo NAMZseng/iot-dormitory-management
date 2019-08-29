@@ -6,82 +6,75 @@
 <mapper namespace="cn.nam.dormitorymanage.backend.dao.AccessInfoDao">
 
     <select id="getStudnetNum" resultType="Integer">
-        select student_num from card_info
-        where
-        card_num = #{cardNum}
+        SELECT student_num
+        FROM card_info
+        WHERE card_num = #{cardNum}
     </select>
 
     <select id="judgeAccess" resultType="Integer">
-        select room_num from student_info
-        where
-        building_num = #{buildingNum} and
-        num = #{studentNum}
+        SELECT room_num
+        FROM student_info
+        WHERE building_num = #{buildingNum}
+            AND num = #{studentNum}
     </select>
 
     <select id="getPreStatus" resultType="Integer">
-        select access_status from access_info
-        where
-        building_num = #{buildingNum} and
-        student_num = #{studentNum}
-        order by access_time desc
-        limit 1
+        SELECT access_status
+        FROM access_info
+        WHERE building_num = #{buildingNum}
+            AND student_num = #{studentNum}
+        ORDER BY access_time DESC
+        LIMIT 1
     </select>
 
     <insert id="addAccess">
-        insert into access_info(building_num, student_num, access_status)
-        values(#{buildingNum}, #{studentNum}, #{accessStatus})
+        INSERT INTO access_info (building_num, student_num, access_status)
+        VALUES (#{buildingNum}, #{studentNum}, #{accessStatus})
     </insert>
 
     <insert id="addBlock">
-        insert into block_info(building_num, student_num)
-        values(#{buildingNum}, #{studentNum})
+        INSERT INTO block_info (building_num, student_num)
+        VALUES (#{buildingNum}, #{studentNum})
     </insert>
 
     <select id="getTodayInOutSum" resultType="AccessCount">
-        select
-        case access_status when 1 then 'in' else 'out' end type,
-        count(*) num
-        from access_info
-        where building_num = #{buildingNum} and access_time >= #{dawnTime}
-        group by access_status
+        SELECT CASE access_status
+                WHEN 1 THEN 'in'
+                ELSE 'out'
+            END AS type, COUNT(*) AS num
+        FROM access_info
+        WHERE building_num = #{buildingNum}
+            AND access_time >= #{dawnTime}
+        GROUP BY access_status
     </select>
 
     <select id="getTodayBlockInfo" resultType="BlockInfo">
-        SELECT
-            s.name student_name,
-            s.num,
-            s.teacher_tel,
-            b.building_num,
-            b.access_time
+        SELECT s.name AS student_name, s.num, s.teacher_tel, b.building_num, b.access_time
         FROM block_info b
-        INNER JOIN student_info s
-        ON b.student_num = s.num
+            INNER JOIN student_info s ON b.student_num = s.num
         WHERE b.building_num = #{buildingNum}
             AND b.access_time >= #{dawnTime}
         ORDER BY access_time DESC
     </select>
 
     <select id="getOutStudentInfo" resultType="StudentInfo">
-        SELECT
-            num,
-            name,
-            school,
-            major,
-            teacher_name,
-            teacher_tel,
-            building_num,
-            room_num
-        FROM   student_info
-        WHERE  num IN
-            (SELECT student_num FROM
-                (SELECT student_num, access_time, access_status
-                  FROM   access_info x
-                  WHERE  building_num = #{buildingNum}
-                     AND access_time = (SELECT Max(access_time)
-                                        FROM   access_info y
-                                        WHERE  x.student_num = y.student_num)
+        SELECT num, name, school, major, teacher_name
+                ,teacher_tel, building_num, room_num
+        FROM student_info
+        WHERE num IN (
+            SELECT student_num
+            FROM (
+                SELECT student_num, access_time, access_status
+                FROM access_info x
+                WHERE building_num = #{buildingNum}
+                     AND access_time = (
+                        SELECT Max(access_time)
+                        FROM access_info y
+                        WHERE x.student_num = y.student_num
+                    )
                 ) temp
-            WHERE  temp.access_status = -1)
+            WHERE temp.access_status = -1
+        )
     </select>
 
 </mapper>
