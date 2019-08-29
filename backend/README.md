@@ -289,7 +289,7 @@ public class HumitureInfo {
 
 该模块的信息是动态变化的，为了节省资源消耗，初步设置为宿舍管理员每点击一次，系统就查询一次，更新信息。
 
->   http get请求示例：http://49.232.57.160:8080/DormitoryManage/humiture/getData?buildingNum=9
+>   http get请求示例：http://49.232.57.160:8080/DormitoryManage/humiture/getTodayData?buildingNum=9
 
 >   Json格式的返回结果示例：
 >
