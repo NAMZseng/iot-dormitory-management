@@ -44,14 +44,14 @@ public class HumitureInfoController {
      * @param buildingNum 宿舍楼号
      * @return List<HumitureInfo>
      */
-    @RequestMapping("getData")
+    @RequestMapping("getTodayData")
     @ResponseBody
-    public List<HumitureInfo> getData(@RequestParam("buildingNum") int buildingNum) {
+    public List<HumitureInfo> getTodayData(@RequestParam("buildingNum") int buildingNum) {
 
         // 获取当天凌晨的时间
         SimpleDateFormat sdf = new SimpleDateFormat();
         sdf.applyPattern("yyyy-MM-dd");
-        String dawnTime = sdf.format(new Date()).toString();
+        String dawnTime = sdf.format(new Date());
 
         return humitureInfoService.getTodayData(buildingNum, dawnTime);
     }

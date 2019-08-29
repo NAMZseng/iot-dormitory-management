@@ -1,8 +1,14 @@
 package cn.nam.dormitorymanage.backend.service;
 
 import cn.nam.dormitorymanage.backend.dao.AccessInfoDao;
+import cn.nam.dormitorymanage.backend.entity.AccessCount;
+import cn.nam.dormitorymanage.backend.entity.BlockInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Nanrong Zeng
@@ -48,5 +54,31 @@ public class AccessInfoService {
             accessInfoDao.addBlock(buildingNum, studentNum);
             return -1;
         }
+    }
+
+    /**
+     * 获取当天出入人流总数, key为出入状态(in/out),value为总数
+     *
+     * @param buildingNum 宿舍楼号
+     * @param dawnTime    当天凌晨的时间
+     * @return 封装出入总人数的Map
+     */
+    public Map<String, Long> getTodayInOutSum(int buildingNum, String dawnTime) {
+        List<AccessCount> list = accessInfoDao.getTodayInOutSum(buildingNum, dawnTime);
+        if(list == null) {
+            return null;
+        }
+
+        int size = list.size();
+        Map<String, Long> map = new HashMap<>(size);
+        for (int i = 0; i < size; i++) {
+            map.put(list.get(i).getType(), list.get(i).getNum());
+        }
+
+        return map;
+    }
+
+    public  List<BlockInfo> getTodayBlockInfo(int buildingNum, String dawnTime) {
+        return accessInfoDao.getTodayBlockInfo(buildingNum, dawnTime);
     }
 }

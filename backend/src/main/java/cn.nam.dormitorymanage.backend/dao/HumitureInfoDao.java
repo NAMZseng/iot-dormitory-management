@@ -21,7 +21,8 @@ public interface HumitureInfoDao {
      * @param humidity    相对湿度
      * @return 添加成功返回1，失败返回0
      */
-    int addData(@Param("macAddress") String macAddress, @Param("temperature") float temperature,
+    int addData(@Param("macAddress") String macAddress,
+                @Param("temperature") float temperature,
                 @Param("humidity") float humidity);
 
 
@@ -32,5 +33,6 @@ public interface HumitureInfoDao {
      * @param dawnTime    当天凌晨的时间
      * @return List<HumitureInfo>
      */
-    List<HumitureInfo> getTodayData(@Param("buildingNum") int buildingNum, @Param("dawnTime") String dawnTime);
+    List<HumitureInfo> getTodayData(@Param("buildingNum") int buildingNum,
+                                    @Param("dawnTime") String dawnTime);
 }

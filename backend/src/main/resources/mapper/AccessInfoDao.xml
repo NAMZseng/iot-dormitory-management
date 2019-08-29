@@ -36,4 +36,28 @@
         insert into block_info(building_num, student_num)
         values(#{buildingNum}, #{studentNum})
     </insert>
+
+    <select id="getTodayInOutSum" resultType="AccessCount">
+        select
+            case access_status when 1 then 'in' else 'out' end type,
+            count(*) num
+        from access_info
+        where building_num = #{buildingNum} and access_time >= #{dawnTime}
+        group by access_status
+    </select>
+
+    <select id="getTodayBlockInfo" resultType="BlockInfo">
+        select
+            s.name student_name,
+            s.num,
+            s.teacher_tel,
+            b.building_num,
+            b.access_time
+        from block_info b inner join student_info s
+        on b.student_num = s.num
+        where b.building_num = #{buildingNum} and
+              b.access_time >= #{dawnTime}
+        order by access_time desc
+    </select>
+
 </mapper>

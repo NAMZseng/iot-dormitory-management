@@ -46,6 +46,8 @@ create table block_info(
   primary key(building_num, student_num, access_time)
 ) engine=innodb default charset=utf8 comment '被阻访问记录表';
 
+insert into card_info values (99998, 1607094202);
+
 create table card_info(
   `card_num` int comment '卡号',
   `student_num` int comment '学生学号',
