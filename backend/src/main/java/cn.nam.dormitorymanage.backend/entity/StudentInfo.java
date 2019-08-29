@@ -8,13 +8,37 @@ package cn.nam.dormitorymanage.backend.entity;
  */
 public class StudentInfo {
 
+    /**
+     * 学生学号
+     */
     private int num;
+    /**
+     * 学生姓名
+     */
     private String name;
+    /**
+     * 学生所在学院
+     */
     private String school;
+    /**
+     * 学生专业
+     */
     private String major;
+    /**
+     * 学生的班主任姓名
+     */
     private String teacherName;
+    /**
+     * 学生的班主任电话
+     */
     private String teacherTel;
+    /**
+     * 学生的所在的宿舍楼号
+     */
     private int buildingNum;
+    /**
+     * 学生所在的房间号
+     */
     private int roomNum;
 
     public int getNum() {

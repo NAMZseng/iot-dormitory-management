@@ -8,11 +8,29 @@ package cn.nam.dormitorymanage.backend.entity;
  */
 public class StaffInfo {
 
+    /**
+     * 职工工号
+     */
     private int num;
+    /**
+     * 职工姓名
+     */
     private String name;
+    /**
+     * 职工电话
+     */
     private String tel;
+    /**
+     * 职工工作楼号
+     */
     private int buildingNum;
+    /**
+     * 职工职称
+     */
     private String title ;
+    /**
+     * 职工的登陆密码
+     */
     private String password;
 
     public int getNum() {

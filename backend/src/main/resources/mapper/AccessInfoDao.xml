@@ -39,25 +39,49 @@
 
     <select id="getTodayInOutSum" resultType="AccessCount">
         select
-            case access_status when 1 then 'in' else 'out' end type,
-            count(*) num
+        case access_status when 1 then 'in' else 'out' end type,
+        count(*) num
         from access_info
         where building_num = #{buildingNum} and access_time >= #{dawnTime}
         group by access_status
     </select>
 
     <select id="getTodayBlockInfo" resultType="BlockInfo">
-        select
+        SELECT
             s.name student_name,
             s.num,
             s.teacher_tel,
             b.building_num,
             b.access_time
-        from block_info b inner join student_info s
-        on b.student_num = s.num
-        where b.building_num = #{buildingNum} and
-              b.access_time >= #{dawnTime}
-        order by access_time desc
+        FROM block_info b
+        INNER JOIN student_info s
+        ON b.student_num = s.num
+        WHERE b.building_num = #{buildingNum}
+            AND b.access_time >= #{dawnTime}
+        ORDER BY access_time DESC
+    </select>
+
+    <select id="getOutStudentInfo" resultType="StudentInfo">
+        SELECT
+            num,
+            name,
+            school,
+            major,
+            teacher_name,
+            teacher_tel,
+            building_num,
+            room_num
+        FROM   student_info
+        WHERE  num IN
+            (SELECT student_num FROM
+                (SELECT student_num, access_time, access_status
+                  FROM   access_info x
+                  WHERE  building_num = #{buildingNum}
+                     AND access_time = (SELECT Max(access_time)
+                                        FROM   access_info y
+                                        WHERE  x.student_num = y.student_num)
+                ) temp
+            WHERE  temp.access_status = -1)
     </select>
 
 </mapper>

@@ -7,7 +7,13 @@ package cn.nam.dormitorymanage.backend.entity;
  * @version 1.0
  */
 public class AccessCount {
+    /**
+     * 出入类型 in/out
+     */
     private String type;
+    /**
+     * 出/入的总人数
+     */
     private long num;
 
     public String getType() {

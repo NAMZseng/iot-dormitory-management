@@ -3,6 +3,7 @@ package cn.nam.dormitorymanage.backend.service;
 import cn.nam.dormitorymanage.backend.dao.AccessInfoDao;
 import cn.nam.dormitorymanage.backend.entity.AccessCount;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
+import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,7 +66,7 @@ public class AccessInfoService {
      */
     public Map<String, Long> getTodayInOutSum(int buildingNum, String dawnTime) {
         List<AccessCount> list = accessInfoDao.getTodayInOutSum(buildingNum, dawnTime);
-        if(list == null) {
+        if (list == null) {
             return null;
         }
 
@@ -78,7 +79,24 @@ public class AccessInfoService {
         return map;
     }
 
-    public  List<BlockInfo> getTodayBlockInfo(int buildingNum, String dawnTime) {
+    /**
+     * 获取当天被阻访问的学生信息
+     *
+     * @param buildingNum 宿舍楼号
+     * @param dawnTime    当天凌晨的时间
+     * @return 查询为空返回null, 否则访问封装了被阻访问的学生信息的List<BlockInfo>
+     */
+    public List<BlockInfo> getTodayBlockInfo(int buildingNum, String dawnTime) {
         return accessInfoDao.getTodayBlockInfo(buildingNum, dawnTime);
+    }
+
+    /**
+     * 获取当晚未归寝的学生信息
+     *
+     * @param buildingNum 宿舍楼号
+     * @return 查询为空返回null, 否则返回封装了未归寝的学生信息的List<StudentInfo>
+     */
+    public List<StudentInfo> getOutStudentInfo(int buildingNum) {
+        return accessInfoDao.getOutStudentInfo(buildingNum);
     }
 }

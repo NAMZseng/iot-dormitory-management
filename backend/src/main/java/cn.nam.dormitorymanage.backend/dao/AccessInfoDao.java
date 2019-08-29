@@ -2,6 +2,7 @@ package cn.nam.dormitorymanage.backend.dao;
 
 import cn.nam.dormitorymanage.backend.entity.AccessCount;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
+import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -68,7 +69,7 @@ public interface AccessInfoDao {
      *
      * @param buildingNum 宿舍楼号
      * @param dawnTime    当天凌晨的时间
-     * @return 查询为空返回null,否则访问封装了出入总人数的List<AccessCount>
+     * @return 查询为空返回null, 否则返回封装了出入总人数的List<AccessCount>
      */
     List<AccessCount> getTodayInOutSum(@Param("buildingNum") int buildingNum,
                                        @Param("dawnTime") String dawnTime);
@@ -78,8 +79,17 @@ public interface AccessInfoDao {
      *
      * @param buildingNum 宿舍楼号
      * @param dawnTime    当天凌晨的时间
-     * @return 查询为空返回null,否则访问封装了被阻访问的学生信息的List<BlockInfo>
+     * @return 查询为空返回null, 否则返回封装了被阻访问的学生信息的List<BlockInfo>
      */
     List<BlockInfo> getTodayBlockInfo(@Param("buildingNum") int buildingNum,
                                       @Param("dawnTime") String dawnTime);
+
+
+    /**
+     * 获取当晚未归寝的学生信息
+     *
+     * @param buildingNum 宿舍楼号
+     * @return 查询为空返回null, 否则返回封装了未归寝的学生信息的List<StudentInfo>
+     */
+    List<StudentInfo> getOutStudentInfo(@Param("buildingNum") int buildingNum);
 }

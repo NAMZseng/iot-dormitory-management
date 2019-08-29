@@ -9,10 +9,25 @@ import java.util.Date;
  * @version 1.0
  */
 public class BlockInfo {
+    /**
+     * 被阻学生姓名
+     */
     private String studentName;
+    /**
+     * 被阻学生学号
+     */
     private int num;
+    /**
+     * 被阻学生班主任电话
+     */
     private String teacherTel;
+    /**
+     * 尝试访问的宿舍楼号
+     */
     private int buildingNum;
+    /**
+     * 尝试访问的时间
+     */
     private Date accessTime;
 
     public String getStudentName() {

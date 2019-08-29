@@ -9,11 +9,29 @@ import java.util.Date;
  * @version 1.0
  */
 public class HumitureInfo {
+    /**
+     * 温湿度传感器的物理地址
+     */
     private String macAddress;
+    /**
+     * 传感器所在楼号
+     */
     private int buildingNum;
+    /**
+     * 传感器在楼里的具体位置
+     */
     private String location;
+    /**
+     * 数据采集时间
+     */
     private Date collectTime;
+    /**
+     * 采集的温度（摄氏度）
+     */
     private float temperature;
+    /**
+     * 采集的相对湿度
+     */
     private float humidity;
 
     public String getMacAddress() {

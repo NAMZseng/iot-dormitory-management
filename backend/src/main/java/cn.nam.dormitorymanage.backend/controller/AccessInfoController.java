@@ -1,6 +1,7 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
+import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import cn.nam.dormitorymanage.backend.service.AccessInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,6 +57,13 @@ public class AccessInfoController {
         return accessInfoService.getTodayInOutSum(buildingNum, dawnTime);
     }
 
+    /**
+     * 获取当天被阻访问的学生信息
+     *
+     * @param buildingNum 宿舍楼号
+     * @param dawnTime    当天凌晨的时间
+     * @return 查询为空返回null, 否则返回封装了被阻访问的学生信息的List<BlockInfo>
+     */
     @RequestMapping("getTodayBlockInfo")
     @ResponseBody
     public List<BlockInfo> getTodayBlockInfo(@RequestParam("buildingNum") int buildingNum) {
@@ -66,5 +74,16 @@ public class AccessInfoController {
 
         return accessInfoService.getTodayBlockInfo(buildingNum, dawnTime);
     }
-}
 
+    /**
+     * 获取当晚未归寝的学生信息
+     *
+     * @param buildingNum 宿舍楼号
+     * @return 查询为空返回null, 否则返回封装了未归寝的学生信息的List<StudentInfo>
+     */
+    @RequestMapping("getOutStudentInfo")
+    @ResponseBody
+    public List<StudentInfo> getOutStudentInfo(@RequestParam("buildingNum") int buildingNum) {
+        return accessInfoService.getOutStudentInfo(buildingNum);
+    }
+}
