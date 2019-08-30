@@ -1,3 +1,27 @@
+-   [服务端设计说明](#服务端设计说明)
+    -   [数据库设计模块](#数据库设计模块)
+    -   [SSM框架设计模块](#ssm框架设计模块)
+-   [服务端与硬件端功能模块交互说明](#服务端与硬件端功能模块交互说明)
+    -   [出入刷卡数据传输模块](#出入刷卡数据传输模块)
+    -   [温湿度传感器数据传输模块](#温湿度传感器数据传输模块)
+-   [服务端与安卓端功能模块交互说明](#服务端与安卓端功能模块交互说明)
+    -   [基本信息模块](#基本信息模块)
+        -   [APP使用对象](#app使用对象)
+        -   [登陆](#登陆)
+        -   [默认密码修改](#默认密码修改)
+        -   [手机号修改](#手机号修改)
+        -   [密码找回（附加功能）](#密码找回附加功能)
+    -   [学生信息模块](#学生信息模块)
+        -   [基本信息展示](#基本信息展示)
+        -   [信息更新（附加功能）](#信息更新附加功能)
+    -   [人流管理模块](#人流管理模块)
+        -   [每日出入刷卡图表显示](#每日出入刷卡图表显示)
+        -   [异常出入信息显示](#异常出入信息显示)
+        -   [学生未归寝提醒](#学生未归寝提醒)
+    -   [环境监控模块](#环境监控模块)
+        -   [每日温湿度图表显示](#每日温湿度图表显示)
+        -   [温湿度异常信息提醒](#温湿度异常信息提醒)
+
 -   [安卓端与后端功能模块交互说明](#安卓端与后端功能模块交互说明)
     -   [基本信息模块](#基本信息模块)
         -   [APP使用对象](#app使用对象)
@@ -16,8 +40,49 @@
         -   [每日温湿度图表显示](#每日温湿度图表显示)
         -   [温湿度异常信息提醒](#温湿度异常信息提醒)
 
-安卓端与后端功能模块交互说明
-============================
+服务端设计说明
+==============
+
+数据库设计模块
+--------------
+
+-   根据楼号，使用分区存储
+
+SSM框架设计模块
+---------------
+
+服务端与硬件端功能模块交互说明
+==============================
+
+出入刷卡数据传输模块
+--------------------
+
+学生刷卡时，机器接收到卡号信息，将数据通过串口发送给本地电脑，本地电脑通过http
+put请求，将**卡号**（cardNum）和所在**楼号**(buildingNum)传送数据给云服务器。
+
+服务器接收数据后，先查询数据库card\_info表，找到对应的学号，若不存在，说明**不存在该卡号**，直接**返回-1**给硬件，表示拒绝访问该宿舍楼。
+
+若存在卡号，则根据学号查询student\_info表，判断其登记的宿舍楼号是否与要访问的宿舍楼号匹配，**不匹配，返回-1**给硬件，表示拒绝访问该宿舍楼，同时将来访信息存入访问被阻block\_info表。**若匹配**，将来访信息存入访问access\_info表，并**返回1**给硬件，表示同意访问。
+
+硬件端根据返回的值（1/-1），进行相应举措，如接收1，则开门；接收-1,
+则报警提示。
+
+> http
+> put请求示例：http://49.232.57.160:8080/DormitoryManage/access/judgeAccess?buildingNum=10&cardNum=99999
+
+温湿度传感器数据传输模块
+------------------------
+
+各个温湿度传感器每隔一段时间采集到数据后，将信息通过wifi传送给协调器，协调器汇总各个传感器的数据，通过wifi传递给本地电脑，本地电脑通过http
+put请求，将传感器的**MAC地址**（macAddr）、**温度**（temperature）以及**相对湿度**（humidity）的数据，传送数据给云服务器。
+
+服务器接收到数据后，直接将数据存入humiture\_info表中。
+
+> http
+> put请求示例：http://49.232.57.160:8080/DormitoryManage/humiture/addData?macAddr=E0DE5305004B1200&temperature=29.234&humidity=69.567
+
+服务端与安卓端功能模块交互说明
+==============================
 
 **注：该文档为功能及逻辑实现的初步说明，对于具体的接口及相关参数，将在后续沟通中一一说明。**
 
@@ -44,7 +109,7 @@ get请求给服务端，服务端通过查询staff\_info表，判断手机号与
 
 > Json格式的返回结果示例：
 >
-> ```json
+> ``` {.json}
 > {
 >   "num": 1,
 >   "name": "刘阿姨",
@@ -54,12 +119,10 @@ get请求给服务端，服务端通过查询staff\_info表，判断手机号与
 >   "password": "123456"
 > }
 > ```
->
-> 
 
 StaffInfo类的定义如下：
 
-``` java
+``` {.java}
 public class StaffInfo {
 
     private int num;
@@ -85,7 +148,8 @@ post请求发送给服务端，服务端通过查询staff\_info表,
 
 密码修改成功后，需用户重新登陆。
 
-> http post示例：http://49.232.57.160:8080/DormitoryManage/staff/updatePassword?tel=18406580009&oldPassword=123456&newPassword=000000
+> http
+> post示例：http://49.232.57.160:8080/DormitoryManage/staff/updatePassword?tel=18406580009&oldPassword=123456&newPassword=000000
 
 ### 手机号修改
 
@@ -94,7 +158,8 @@ post请求给服务端，服务端先判断新手机号在数据库中**是否�
 
 手机号修改成功后，需用户重新登陆。
 
-> http post示例：http://49.232.57.160:8080/DormitoryManage/staff/updateTel?oldTel=18406580009&password=123456&newTel=18406587474
+> http
+> post示例：http://49.232.57.160:8080/DormitoryManage/staff/updateTel?oldTel=18406580009&password=123456&newTel=18406587474
 
 ### 密码找回（附加功能）
 
@@ -115,7 +180,7 @@ get请求传给服务端，服务端会根据宿舍楼号查询student\_info表�
 
 StudentInfo类的定义如下：
 
-``` java
+``` {.java}
 public class StudentInfo {
 
     private int num;
@@ -131,11 +196,12 @@ public class StudentInfo {
 }
 ```
 
-> http get请求示例：http://49.232.57.160:8080/DormitoryManage/student/getStudentsInfo?buildingNum=9
+> http
+> get请求示例：http://49.232.57.160:8080/DormitoryManage/student/getStudentsInfo?buildingNum=9
 >
 > Json格式的返回结果示例：
 >
-> ```json
+> ``` {.json}
 > [
 >   {
 >     "num": 1607094215,
@@ -159,8 +225,6 @@ public class StudentInfo {
 >   }
 > ]
 > ```
->
-> 
 
 ### 信息更新（附加功能）
 
@@ -174,22 +238,23 @@ public class StudentInfo {
 在该模块，宿舍管理员可以看到每日出入该宿舍楼的人流情况。
 
 当宿舍管理员点击该部分的按钮时，安卓端将登陆职工的所在的**宿舍楼号**（buildingNum），通过http
-get请求传给服务端，服务端通过查询访问记录access\_info表，将**该楼的该日**的人流情况，以**Json格式**返回一个封装了出入总人数的**Map\<String, Long\>**, 若当日**无人流出入，则返回null**。安卓端可以**柱状图**的形式展现出入总人数。
+get请求传给服务端，服务端通过查询访问记录access\_info表，将**该楼的该日**的人流情况，以**Json格式**返回一个封装了出入总人数的**Map\<String,
+Long\>**,
+若当日**无人流出入，则返回null**。安卓端可以**柱状图**的形式展现出入总人数。
 
 该模块的信息是动态变化的，为了节省资源消耗，初步设置为宿舍管理员每点击一次，系统就查询一次，更新信息。
 
->   http get 请求示例：http://49.232.57.160:8080/DormitoryManage/access/getTodayInOutSum?buildingNum=10
+> http get
+> 请求示例：http://49.232.57.160:8080/DormitoryManage/access/getTodayInOutSum?buildingNum=10
 >
->   Json格式的返回结果示例：
+> Json格式的返回结果示例：
 >
->   ```json
->   {
->     "in": 5,
->     "out": 4
->   }
->   ```
->
->   
+> ``` {.json}
+> {
+>   "in": 5,
+>   "out": 4
+> }
+> ```
 
 ### 异常出入信息显示
 
@@ -200,7 +265,7 @@ get请求传给服务端，服务端通过查询被阻访问记录block\_info表
 
 BlockInfo类定义如下：
 
-``` java
+``` {.java}
 public class BlockInfo {
     private String studentName;
     private int num;
@@ -211,56 +276,54 @@ public class BlockInfo {
 }
 ```
 
->   http get 请求示例：http://49.232.57.160:8080/DormitoryManage/access/getTodayBlockInfo?buildingNum=9
+> http get
+> 请求示例：http://49.232.57.160:8080/DormitoryManage/access/getTodayBlockInfo?buildingNum=9
 >
->   Json格式的返回结果示例：
+> Json格式的返回结果示例：
 >
->   ```json
->   [
->     {
->       "studentName": "赵甲同学",
->       "num": 1607094202,
->       "teacherTel": "18406587401",
->       "buildingNum": 9,
->       "accessTime": 1567063343000
->     },
->     {
->       "studentName": "刘甲同学",
->       "num": 1607094201,
->       "teacherTel": "18406587401",
->       "buildingNum": 9,
->       "accessTime": 1567062887000
->     }
->   ]
->   ```
-
-
+> ``` {.json}
+> [
+>   {
+>     "studentName": "赵甲同学",
+>     "num": 1607094202,
+>     "teacherTel": "18406587401",
+>     "buildingNum": 9,
+>     "accessTime": 1567063343000
+>   },
+>   {
+>     "studentName": "刘甲同学",
+>     "num": 1607094201,
+>     "teacherTel": "18406587401",
+>     "buildingNum": 9,
+>     "accessTime": 1567062887000
+>   }
+> ]
+> ```
 
 ### 学生未归寝提醒
 
 在该模块，宿舍管理员通过设置门禁时间（如周一至周五晚11点，周末晚11：30），当到达门禁时间时，安卓端**自动**将登陆职工的所在的**宿舍楼号**（buildingNum），通过http
 get请求，发送给服务端。服务端通过查询access\_info表，将未归寝的学生名单以一个列表**List\<StudentInfo\>，通过Json格式**，返回给返回给安卓端。安卓端可以直接以**表格**的形式展现，供宿舍管理员查询。
 
->   http get请求示例：http://49.232.57.160:8080/DormitoryManage/access/getOutStudentInfo?buildingNum=10
+> http
+> get请求示例：http://49.232.57.160:8080/DormitoryManage/access/getOutStudentInfo?buildingNum=10
 >
->   Json格式的返回结果示例：
+> Json格式的返回结果示例：
 >
->   ```json
->   [
->     {
->       "num": 1607094202,
->       "teacherTel": "18406587401",
->       "buildingNum": 10,
->       "name": "赵甲同学",
->       "school": "大数据学院",
->       "major": "物联网工程",
->       "teacherName": "孟老师",
->       "roomNum": 101
->     }
->   ]
->   ```
->
->   
+> ``` {.json}
+> [
+>   {
+>     "num": 1607094202,
+>     "teacherTel": "18406587401",
+>     "buildingNum": 10,
+>     "name": "赵甲同学",
+>     "school": "大数据学院",
+>     "major": "物联网工程",
+>     "teacherName": "孟老师",
+>     "roomNum": 101
+>   }
+> ]
+> ```
 
 环境监控模块
 ------------
@@ -274,7 +337,7 @@ get请求传给服务端，服务端通过查询温湿度数据humiture\_info表
 
 HumitureInfo类的定义如下：
 
-``` java
+``` {.java}
 public class HumitureInfo {
     private String macAddress;
     private int buildingNum;
@@ -289,40 +352,39 @@ public class HumitureInfo {
 
 该模块的信息是动态变化的，为了节省资源消耗，初步设置为宿舍管理员每点击一次，系统就查询一次，更新信息。
 
->   http get请求示例：http://49.232.57.160:8080/DormitoryManage/humiture/getTodayData?buildingNum=9
+> http
+> get请求示例：http://49.232.57.160:8080/DormitoryManage/humiture/getTodayData?buildingNum=9
 
->   Json格式的返回结果示例：
+> Json格式的返回结果示例：
 >
->   ```json
->   [
->     {
->       "buildingNum": 9,
->       "macAddress": "E0DE5305004B1200",
->       "location": "一楼东",
->       "collectTime": 1566985657000,
->       "temperature": 90.8798,
->       "humidity": 80.9891
->     },
->     {
->       "buildingNum": 9,
->       "macAddress": "9C625305004B1200",
->       "location": "二楼西",
->       "collectTime": 1566985629000,
->       "temperature": 40.8798,
->       "humidity": 60.9891
->     }
->   ]
->   ```
+> ``` {.json}
+> [
+>   {
+>     "buildingNum": 9,
+>     "macAddress": "E0DE5305004B1200",
+>     "location": "一楼东",
+>     "collectTime": 1566985657000,
+>     "temperature": 90.8798,
+>     "humidity": 80.9891
+>   },
+>   {
+>     "buildingNum": 9,
+>     "macAddress": "9C625305004B1200",
+>     "location": "二楼西",
+>     "collectTime": 1566985629000,
+>     "temperature": 40.8798,
+>     "humidity": 60.9891
+>   }
+> ]
+> ```
 >
->   注意，时间的格式为long型，安卓端需使用SimpleDateFormat类进行转换。
+> 注意，时间的格式为long型，安卓端需使用SimpleDateFormat类进行转换。
 >
->   ```java
->   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
->   long collectTime = 1566985657000;
->   Date date = sdf.parse(collectTime);
->   ```
->
->   
+> ``` {.java}
+> SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+> long collectTime = 1566985657000;
+> Date date = sdf.parse(collectTime);
+> ```
 
 ### 温湿度异常信息提醒
 
