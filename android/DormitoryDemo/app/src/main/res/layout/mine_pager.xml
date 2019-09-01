@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个人信息"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        />
+
+    <TableLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+
+                android:textSize="25dp"
+                android:text="姓名："
+                />
+
+            <TextView
+                android:id="@+id/mine_tv_name"
+                android:text="刘阿姨"
+                android:textSize="25dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:text="手机号："
+                />
+
+            <TextView
+                android:id="@+id/mine_tv_tel"
+                android:layout_weight="1"
+                android:text="123456"
+                android:textSize="25dp"
+                />
+            <Button
+                android:id="@+id/mine_btn_tel"
+                android:layout_weight="1"
+                android:text="修改"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+
+                android:textSize="25dp"
+                android:text="楼号："
+                />
+
+            <TextView
+                android:id="@+id/mine_tv_buildingNum"
+                android:text="9"
+                android:textSize="25dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textSize="25dp"
+                android:text="职位："
+                />
+
+            <TextView
+                android:id="@+id/mine_tv_title"
+                android:text="宿舍楼总负责人"
+                android:textSize="25dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:text="密码："
+                />
+
+            <TextView
+                android:layout_weight="1"
+                android:text="*******"
+                android:textSize="25dp"
+                />
+            <Button
+                android:id="@+id/mine_btn_pwd"
+                android:layout_weight="1"
+                android:text="修改"
+                />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+
+
+
+</RelativeLayout>
