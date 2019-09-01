@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.nam.dormitorymanage.backend.dao.StaffInfoDao">
+
+    <select id="getStaffInfo" resultType="StaffInfo">
+        SELECT num, name, tel, building_num, title, password
+        FROM staff_info
+        WHERE tel = #{tel}
+            AND password = #{password}
+    </select>
+
+    <update id="upadatePassord">
+        UPDATE staff_info
+        SET password = #{newPassword}
+        WHERE tel = #{tel}
+            AND password = #{oldPassword}
+    </update>
+
+    <select id="fingTel" resultType="String">
+        SELECT tel
+        FROM staff_info
+        WHERE tel = #{tel}
+    </select>
+
+    <update id="updateTel">
+        UPDATE staff_info
+        SET tel = #{newTel}
+        WHERE tel = #{oldTel}
+            AND password = #{password}
+    </update>
+
+</mapper>

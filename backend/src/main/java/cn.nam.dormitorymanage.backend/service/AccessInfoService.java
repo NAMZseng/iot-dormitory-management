@@ -43,8 +43,8 @@ public class AccessInfoService {
 
             Integer preStatus = accessInfoDao.getPreStatus(buildingNum, studentNum);
             if (preStatus == null) {
-                // 该学生为第一次进入宿舍楼
-                return accessInfoDao.addAccess(buildingNum, studentNum, 1);
+                // 该学生为第一次出宿舍楼
+                return accessInfoDao.addAccess(buildingNum, studentNum, -1);
             } else {
                 // 状态取反
                 preStatus = -1 * preStatus;

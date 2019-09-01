@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.nam.dormitorymanage.backend.dao.HumitureInfoDao">
+
+    <insert id="addData">
+        INSERT INTO humiture_info (mac_address, temperature, humidity)
+        VALUES (#{macAddress}, #{temperature}, #{humidity})
+    </insert>
+
+    <select id="getTodayData" resultType="HumitureInfo">
+        SELECT a.mac_address, building_num, location, collect_time, temperature
+            ,humidity
+        FROM sensors_info a
+            INNER JOIN humiture_info b ON a.mac_address = b.mac_address
+        WHERE a.building_num = #{buildingNum}
+            AND collect_time >= #{dawnTime}
+        ORDER BY collect_time DESC
+    </select>
+
+</mapper>
