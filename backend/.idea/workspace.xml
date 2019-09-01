@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" afterDir="false" />
-    </list>
+    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,8 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,6 +244,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +399,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23726542" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24061662" />
       <window_info x="237" y="241" width="505" height="257" id="Structure" order="2" weight="0.21849866" />
       <window_info id="Hadoop FileSystem" order="3" weight="0.3297587" />
       <window_info id="Designer" order="4" />
