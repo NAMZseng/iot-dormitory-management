@@ -9,3 +9,4 @@
 * 关键代码需要写注释。
 * 方法、变量的命名统一使用小驼峰式，第一个单词首字母小写，后面其他单词首字母大写，如String stringNameDemo = null。
 * 类的命名使用大驼峰式，所有单词首字母大写，如class ClassNameDemo。
+* **服务端与硬件及安卓端的交互说明参见branch_backend分支的README.md文档。**
