@@ -305,6 +305,8 @@ public class BlockInfo {
 在该模块，宿舍管理员通过设置门禁时间（如周一至周五晚11点，周末晚11：30），当到达门禁时间时，安卓端**自动**将登陆职工的所在的**宿舍楼号**（buildingNum），通过http
 get请求，发送给服务端。服务端通过查询access\_info表，将未归寝的学生名单以一个列表**List\<StudentInfo\>，通过Json格式**，返回给返回给安卓端。安卓端可以直接以**表格**的形式展现，供宿舍管理员查询。
 
+**注：初始化默认学生都在宿舍**
+
 > http
 > get请求示例：http://49.232.57.160:8080/DormitoryManage/access/getOutStudentInfo?buildingNum=10
 >
