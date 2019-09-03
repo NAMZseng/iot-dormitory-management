@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/14/2019  19:10:59  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/24/2019  20:06:17  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -27,14 +27,13 @@ LINK MAP OF MODULE:  RC522 (?C_STARTUP)
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
             REG     0008H     0008H     ABSOLUTE     "REG BANK 1"
-            DATA    0010H     002AH     UNIT         _DATA_GROUP_
-            DATA    003AH     0009H     UNIT         ?DT?MAIN
-            IDATA   0043H     0001H     UNIT         ?STACK
+            DATA    0010H     002CH     UNIT         _DATA_GROUP_
+            DATA    003CH     0009H     UNIT         ?DT?MAIN
+            IDATA   0045H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     001BH     UNIT         ?PR?_DELAY_10MS?RC522
-                    001EH     0005H                  *** GAP ***
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY_MS?MAIN
             CODE    0023H     0003H     ABSOLUTE     
             CODE    0026H     017FH     UNIT         ?PR?_PCDCOMMF522?RC522
             CODE    01A5H     0087H     UNIT         ?PR?_PCDANTICOLL?RC522
@@ -44,22 +43,24 @@ LINK MAP OF MODULE:  RC522 (?C_STARTUP)
             CODE    0370H     0057H     UNIT         ?PR?_WRITERAWRC?RC522
             CODE    03C7H     004BH     UNIT         ?PR?_M500PCDCONFIGISOTYPE?RC522
             CODE    0412H     003EH     UNIT         ?PR?PCDRESET?RC522
-            CODE    0450H     002EH     UNIT         ?PR?ISR_UART?MAIN
-            CODE    047EH     002CH     UNIT         ?PR?AUTO_READER?MAIN
-            CODE    04AAH     0027H     UNIT         ?PR?INITIALIZESYSTEM?MAIN
-            CODE    04D1H     0012H     UNIT         ?PR?FEEB?MAIN
-            CODE    04E3H     0012H     UNIT         ?PR?_CLEARBITMASK?RC522
-            CODE    04F5H     0012H     UNIT         ?PR?PCDANTENNAON?RC522
-            CODE    0507H     000DH     UNIT         ?PR?_SETBITMASK?RC522
-            CODE    0514H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0520H     0007H     UNIT         ?PR?PCDANTENNAOFF?RC522
-            CODE    0527H     0006H     UNIT         ?PR?MAIN?MAIN
+            CODE    0450H     0038H     UNIT         ?PR?ISR_UART?MAIN
+            CODE    0488H     002CH     UNIT         ?PR?AUTO_READER?MAIN
+            CODE    04B4H     0027H     UNIT         ?PR?INITIALIZESYSTEM?MAIN
+            CODE    04DBH     001BH     UNIT         ?PR?_DELAY_10MS?RC522
+            CODE    04F6H     001AH     UNIT         ?PR?SHOW_LED?MAIN
+            CODE    0510H     0012H     UNIT         ?PR?FEEB?MAIN
+            CODE    0522H     0012H     UNIT         ?PR?_CLEARBITMASK?RC522
+            CODE    0534H     0012H     UNIT         ?PR?PCDANTENNAON?RC522
+            CODE    0546H     000DH     UNIT         ?PR?_SETBITMASK?RC522
+            CODE    0553H     000CH     UNIT         ?C_C51STARTUP
+            CODE    055FH     0007H     UNIT         ?PR?PCDANTENNAOFF?RC522
+            CODE    0566H     0006H     UNIT         ?PR?MAIN?MAIN
 
 
 
 OVERLAY MAP OF MODULE:   RC522 (?C_STARTUP)
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 2
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 2
 
 
 
@@ -103,27 +104,27 @@ SEGMENT                                   DATA_GROUP
   +--> ?PR?_DELAY_10MS?RC522
   +--> ?PR?PCDANTENNAON?RC522
 
-?PR?AUTO_READER?MAIN                    -----    -----
+?PR?AUTO_READER?MAIN                    0010H    0002H
   +--> ?PR?_PCDREQUEST?RC522
   +--> ?PR?_PCDANTICOLL?RC522
   +--> ?PR?FEEB?MAIN
 
-?PR?_PCDREQUEST?RC522                   0010H    0018H
+?PR?_PCDREQUEST?RC522                   0012H    0018H
   +--> ?PR?_CLEARBITMASK?RC522
   +--> ?PR?_WRITERAWRC?RC522
   +--> ?PR?_SETBITMASK?RC522
   +--> ?PR?_PCDCOMMF522?RC522
 
-?PR?_PCDCOMMF522?RC522                  0029H    0011H
+?PR?_PCDCOMMF522?RC522                  002BH    0011H
   +--> ?PR?_WRITERAWRC?RC522
   +--> ?PR?_CLEARBITMASK?RC522
   +--> ?PR?_SETBITMASK?RC522
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 3
+
+
   +--> ?PR?_READRAWRC?RC522
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 3
 
-
-
-?PR?_PCDANTICOLL?RC522                  0010H    0019H
+?PR?_PCDANTICOLL?RC522                  0012H    0019H
   +--> ?PR?_CLEARBITMASK?RC522
   +--> ?PR?_WRITERAWRC?RC522
   +--> ?PR?_PCDCOMMF522?RC522
@@ -131,6 +132,14 @@ SEGMENT                                   DATA_GROUP
 
 ?PR?FEEB?MAIN                           -----    -----
   +--> ?PR?_DELAY_10MS?RC522
+
+*** NEW ROOT ***************************************************
+
+?PR?ISR_UART?MAIN                       -----    -----
+  +--> ?PR?SHOW_LED?MAIN
+
+?PR?SHOW_LED?MAIN                       -----    -----
+  +--> ?PR?_DELAY_MS?MAIN
 
 
 
@@ -140,8 +149,8 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0514H         SEGMENT       ?C_C51STARTUP
-  I:0043H         SEGMENT       ?STACK
+  C:0553H         SEGMENT       ?C_C51STARTUP
+  I:0045H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -150,7 +159,7 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0517H         SYMBOL        IDATALOOP
+  C:0556H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -159,18 +168,21 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0514H         SYMBOL        STARTUP1
+  C:0553H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0514H         LINE#         133
-  C:0516H         LINE#         134
-  C:0517H         LINE#         135
-  C:0518H         LINE#         136
-  C:051AH         LINE#         185
-  C:051DH         LINE#         196
+  C:0553H         LINE#         133
+  C:0555H         LINE#         134
+  C:0556H         LINE#         135
+  C:0557H         LINE#         136
+  C:0559H         LINE#         185
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 4
+
+
+  C:055CH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        MAIN
@@ -179,96 +191,134 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   D:00B0H         PUBLIC        P3
   B:00A8H.7       PUBLIC        EA
   D:00A8H         PUBLIC        IE
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 4
-
-
-  C:04D1H         PUBLIC        feeb
-  D:003AH         PUBLIC        Temp
+  C:0510H         PUBLIC        feeb
+  D:003CH         PUBLIC        Temp
   B:00A8H.4       PUBLIC        ES
   D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
   B:0098H.1       PUBLIC        TI
-  C:04AAH         PUBLIC        InitializeSystem
-  C:0527H         PUBLIC        main
+  C:04B4H         PUBLIC        InitializeSystem
+  C:0566H         PUBLIC        main
   D:0099H         PUBLIC        SBUF
   D:0087H         PUBLIC        PCON
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
+  B:00B0H.0       PUBLIC        led
   B:00B0H.7       PUBLIC        ff
   D:008DH         PUBLIC        TH1
   D:008BH         PUBLIC        TL1
-  C:047EH         PUBLIC        Auto_Reader
+  C:0488H         PUBLIC        Auto_Reader
+  C:0003H         PUBLIC        _delay_ms
   B:0088H.6       PUBLIC        TR1
-  D:003EH         PUBLIC        UID
+  C:04F6H         PUBLIC        show_led
+  D:0040H         PUBLIC        UID
   B:0098H.4       PUBLIC        REN
   D:00C8H         PUBLIC        T2CON
   C:0450H         PUBLIC        isr_UART
   D:00D0H         PUBLIC        PSW
   -------         PROC          FEEB
-  C:04D1H         LINE#         7
-  C:04D1H         LINE#         8
-  C:04D3H         LINE#         9
-  C:04DAH         LINE#         10
-  C:04DCH         LINE#         11
+  C:0510H         LINE#         7
+  C:0510H         LINE#         8
+  C:0512H         LINE#         9
+  C:0519H         LINE#         10
+  C:051BH         LINE#         11
   -------         ENDPROC       FEEB
   -------         PROC          AUTO_READER
-  C:047EH         LINE#         14
-  C:047EH         LINE#         15
-  C:047EH         LINE#         16
-  C:0490H         LINE#         17
-  C:049FH         LINE#         18
-  C:04A1H         LINE#         19
-  C:04A4H         LINE#         20
-  C:04A4H         LINE#         21
-  C:04A6H         LINE#         22
-  C:04A8H         LINE#         23
+  -------         DO            
+  D:0010H         SYMBOL        tar
+  -------         ENDDO         
+  C:0488H         LINE#         14
+  C:0488H         LINE#         16
+  C:0488H         LINE#         17
+  C:049AH         LINE#         18
+  C:04A9H         LINE#         19
+  C:04ABH         LINE#         20
+  C:04AEH         LINE#         21
+  C:04AEH         LINE#         22
+  C:04B0H         LINE#         23
+  C:04B2H         LINE#         24
   -------         ENDPROC       AUTO_READER
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 5
+
+
   -------         PROC          INITIALIZESYSTEM
-  C:04AAH         LINE#         26
-  C:04AAH         LINE#         27
-  C:04ADH         LINE#         28
-  C:04B0H         LINE#         29
-  C:04B3H         LINE#         30
-  C:04B6H         LINE#         31
-  C:04B9H         LINE#         32
-  C:04BBH         LINE#         33
-  C:04BDH         LINE#         34
-  C:04BFH         LINE#         35
-  C:04C1H         LINE#         36
-  C:04C3H         LINE#         37
-  C:04C6H         LINE#         38
-  C:04C9H         LINE#         39
-  C:04CCH         LINE#         40
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 5
-
-
+  C:04B4H         LINE#         27
+  C:04B4H         LINE#         28
+  C:04B7H         LINE#         29
+  C:04BAH         LINE#         30
+  C:04BDH         LINE#         31
+  C:04C0H         LINE#         32
+  C:04C3H         LINE#         33
+  C:04C5H         LINE#         34
+  C:04C7H         LINE#         35
+  C:04C9H         LINE#         36
+  C:04CBH         LINE#         37
+  C:04CDH         LINE#         38
+  C:04D0H         LINE#         39
+  C:04D3H         LINE#         40
+  C:04D6H         LINE#         41
   -------         ENDPROC       INITIALIZESYSTEM
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         44
+  C:0003H         LINE#         45
+  C:0003H         LINE#         47
+  C:000EH         LINE#         48
+  C:0022H         LINE#         49
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          SHOW_LED
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:04F6H         LINE#         51
+  C:04F6H         LINE#         52
+  C:04F6H         LINE#         54
+  C:04F8H         LINE#         55
+  C:04FBH         LINE#         56
+  C:0502H         LINE#         57
+  C:0504H         LINE#         58
+  C:050FH         LINE#         59
+  -------         ENDPROC       SHOW_LED
   -------         PROC          ISR_UART
   -------         DO            
   D:000FH         SYMBOL        i
   -------         ENDDO         
-  C:0450H         LINE#         43
-  C:0457H         LINE#         45
-  C:045AH         LINE#         46
-  C:045CH         LINE#         47
-  C:0468H         LINE#         48
-  C:046FH         LINE#         49
-  C:0472H         LINE#         50
-  C:0474H         LINE#         51
-  C:0477H         LINE#         52
-  C:0479H         LINE#         53
-  C:0479H         LINE#         54
+  C:0450H         LINE#         61
+  C:0457H         LINE#         63
+  C:045AH         LINE#         64
+  C:045AH         LINE#         65
+  C:045DH         LINE#         66
+  C:045FH         LINE#         67
+  C:0461H         LINE#         68
+  C:0461H         LINE#         69
+  C:0464H         LINE#         70
+  C:0466H         LINE#         71
+  C:0472H         LINE#         72
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 6
+
+
+  C:0479H         LINE#         73
+  C:047CH         LINE#         74
+  C:047EH         LINE#         75
+  C:0481H         LINE#         76
+  C:0483H         LINE#         77
+  C:0483H         LINE#         78
   -------         ENDPROC       ISR_UART
   -------         PROC          MAIN
-  C:0527H         LINE#         56
-  C:0527H         LINE#         57
-  C:052AH         LINE#         58
+  C:0566H         LINE#         80
+  C:0566H         LINE#         81
+  C:0569H         LINE#         82
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
   -------         MODULE        RC522
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:0520H         PUBLIC        PcdAntennaOff
+  C:055FH         PUBLIC        PcdAntennaOff
   D:0090H         PUBLIC        P1
   B:00B0H.2       PUBLIC        MF522_NSS
   D:00B0H         PUBLIC        P3
@@ -276,21 +326,21 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   B:00B0H.6       PUBLIC        MF522_RST
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:04E7H         PUBLIC        _ClearBitMask
+  C:0526H         PUBLIC        _ClearBitMask
   D:00CCH         PUBLIC        T2LH
   C:0412H         PUBLIC        PcdReset
-  C:04F5H         PUBLIC        PcdAntennaOn
+  C:0534H         PUBLIC        PcdAntennaOn
   B:00B0H.4       PUBLIC        MF522_SI
   B:00B0H.5       PUBLIC        MF522_SO
   D:0098H         PUBLIC        SCON
-  C:0003H         PUBLIC        _delay_10ms
+  C:04DBH         PUBLIC        _delay_10ms
   D:0088H         PUBLIC        TCON
   C:031AH         PUBLIC        _ReadRawRC
   B:00C8H.7       PUBLIC        TF2
   C:0370H         PUBLIC        _WriteRawRC
   C:01A5H         PUBLIC        _PcdAnticoll
   B:00C8H.2       PUBLIC        TR2
-  C:0507H         PUBLIC        _SetBitMask
+  C:0546H         PUBLIC        _SetBitMask
   C:0026H         PUBLIC        _PcdComMF522
   D:00C8H         PUBLIC        T2CON
   C:03C7H         PUBLIC        _M500PcdConfigISOType
@@ -298,20 +348,20 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   B:00B0H.3       PUBLIC        MF522_SCK
   D:00D0H         PUBLIC        PSW
   -------         PROC          _PCDREQUEST
-  D:0010H         SYMBOL        req_code
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 6
-
-
-  D:0011H         SYMBOL        pTagType
+  D:0012H         SYMBOL        req_code
+  D:0013H         SYMBOL        pTagType
   -------         DO            
   D:0007H         SYMBOL        status
-  D:0014H         SYMBOL        unLen
-  D:0016H         SYMBOL        ucComMF522Buf
+  D:0016H         SYMBOL        unLen
+  D:0018H         SYMBOL        ucComMF522Buf
   -------         ENDDO         
   C:02ACH         LINE#         22
   C:02B4H         LINE#         26
   C:02B7H         LINE#         27
   C:02BEH         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 7
+
+
   C:02C5H         LINE#         29
   C:02C8H         LINE#         30
   C:02E8H         LINE#         31
@@ -324,13 +374,13 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:0313H         LINE#         39
   -------         ENDPROC       _PCDREQUEST
   -------         PROC          _PCDANTICOLL
-  D:0010H         SYMBOL        pSnr
+  D:0012H         SYMBOL        pSnr
   -------         DO            
-  D:0013H         SYMBOL        status
+  D:0015H         SYMBOL        status
   D:0007H         SYMBOL        i
-  D:0014H         SYMBOL        snr_check
-  D:0015H         SYMBOL        unLen
-  D:0017H         SYMBOL        ucComMF522Buf
+  D:0016H         SYMBOL        snr_check
+  D:0017H         SYMBOL        unLen
+  D:0019H         SYMBOL        ucComMF522Buf
   -------         ENDDO         
   C:01A5H         LINE#         46
   C:01ABH         LINE#         47
@@ -359,9 +409,6 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:0412H         LINE#         82
   C:0412H         LINE#         83
   C:0414H         LINE#         84
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 7
-
-
   C:0415H         LINE#         85
   C:0417H         LINE#         86
   C:0418H         LINE#         87
@@ -372,6 +419,9 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:042AH         LINE#         94
   C:0431H         LINE#         95
   C:0438H         LINE#         96
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 8
+
+
   C:043FH         LINE#         97
   C:0446H         LINE#         98
   C:044DH         LINE#         99
@@ -419,9 +469,6 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:0347H         LINE#         140
   C:0349H         LINE#         141
   C:034CH         LINE#         143
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 8
-
-
   C:0358H         LINE#         144
   C:0358H         LINE#         145
   C:035AH         LINE#         146
@@ -432,6 +479,9 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:036BH         LINE#         152
   C:036DH         LINE#         153
   C:036FH         LINE#         154
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 9
+
+
   -------         ENDPROC       _READRAWRC
   -------         PROC          _WRITERAWRC
   D:0007H         SYMBOL        Address
@@ -468,44 +518,44 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   -------         DO            
   D:0006H         SYMBOL        tmp
   -------         ENDDO         
-  C:0507H         LINE#         192
-  C:0507H         LINE#         193
-  C:0507H         LINE#         194
-  C:0507H         LINE#         195
-  C:050CH         LINE#         196
+  C:0546H         LINE#         192
+  C:0546H         LINE#         193
+  C:0546H         LINE#         194
+  C:0546H         LINE#         195
+  C:054BH         LINE#         196
   -------         ENDPROC       _SETBITMASK
-  C:04E3H         SYMBOL        L?0076
+  C:0522H         SYMBOL        L?0076
   -------         PROC          L?0075
   -------         ENDPROC       L?0075
-  C:04E3H         SYMBOL        L?0076
+  C:0522H         SYMBOL        L?0076
   -------         PROC          _CLEARBITMASK
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 9
-
-
   D:0004H         SYMBOL        reg
   D:0003H         SYMBOL        mask
   -------         DO            
   D:0006H         SYMBOL        tmp
   -------         ENDDO         
-  C:04E7H         LINE#         204
-  C:04E7H         LINE#         205
-  C:04E7H         LINE#         206
-  C:04E7H         LINE#         207
-  C:04ECH         LINE#         208
+  C:0526H         LINE#         204
+  C:0526H         LINE#         205
+  C:0526H         LINE#         206
+  C:0526H         LINE#         207
+  C:052BH         LINE#         208
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 10
+
+
   -------         ENDPROC       _CLEARBITMASK
   -------         PROC          _PCDCOMMF522
-  D:0029H         SYMBOL        Command
-  D:002AH         SYMBOL        pInData
-  D:002DH         SYMBOL        InLenByte
-  D:002EH         SYMBOL        pOutData
-  D:0031H         SYMBOL        pOutLenBit
+  D:002BH         SYMBOL        Command
+  D:002CH         SYMBOL        pInData
+  D:002FH         SYMBOL        InLenByte
+  D:0030H         SYMBOL        pOutData
+  D:0033H         SYMBOL        pOutLenBit
   -------         DO            
-  D:0034H         SYMBOL        status
-  D:0035H         SYMBOL        irqEn
-  D:0036H         SYMBOL        waitFor
+  D:0036H         SYMBOL        status
+  D:0037H         SYMBOL        irqEn
+  D:0038H         SYMBOL        waitFor
   D:0005H         SYMBOL        lastBits
-  D:0037H         SYMBOL        n
-  D:0038H         SYMBOL        i
+  D:0039H         SYMBOL        n
+  D:003AH         SYMBOL        i
   -------         ENDDO         
   C:0026H         LINE#         219
   C:002EH         LINE#         224
@@ -539,9 +589,6 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:00B6H         LINE#         262
   C:00BDH         LINE#         263
   C:00C5H         LINE#         264
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 10
-
-
   C:00C5H         LINE#         265
   C:00D4H         LINE#         266
   C:00DBH         LINE#         268
@@ -552,6 +599,9 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:00F3H         LINE#         273
   C:00FAH         LINE#         274
   C:00FDH         LINE#         275
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 11
+
+
   C:0106H         LINE#         276
   C:0106H         LINE#         277
   C:010DH         LINE#         278
@@ -577,41 +627,41 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   -------         DO            
   D:0007H         SYMBOL        i
   -------         ENDDO         
-  C:04F5H         LINE#         307
-  C:04F5H         LINE#         309
-  C:04FAH         LINE#         310
-  C:04FFH         LINE#         311
-  C:04FFH         LINE#         312
-  C:0506H         LINE#         313
-  C:0506H         LINE#         314
+  C:0534H         LINE#         307
+  C:0534H         LINE#         309
+  C:0539H         LINE#         310
+  C:053EH         LINE#         311
+  C:053EH         LINE#         312
+  C:0545H         LINE#         313
+  C:0545H         LINE#         314
   -------         ENDPROC       PCDANTENNAON
   -------         PROC          PCDANTENNAOFF
-  C:0520H         LINE#         320
-  C:0520H         LINE#         321
-  C:0520H         LINE#         322
+  C:055FH         LINE#         320
+  C:055FH         LINE#         321
+  C:055FH         LINE#         322
   -------         ENDPROC       PCDANTENNAOFF
   -------         PROC          _DELAY_10MS
   D:0006H         SYMBOL        _10ms
-  C:0003H         LINE#         328
-  C:0003H         LINE#         329
-  C:0003H         LINE#         331
-  C:0006H         LINE#         332
-  C:0008H         LINE#         334
-  C:000AH         LINE#         335
-  C:0014H         LINE#         336
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2019  19:10:59  PAGE 11
-
-
-  C:0014H         LINE#         337
-  C:0017H         LINE#         338
-  C:0019H         LINE#         339
-  C:001BH         LINE#         340
-  C:001DH         LINE#         376
+  C:04DBH         LINE#         328
+  C:04DBH         LINE#         329
+  C:04DBH         LINE#         331
+  C:04DEH         LINE#         332
+  C:04E0H         LINE#         334
+  C:04E2H         LINE#         335
+  C:04ECH         LINE#         336
+  C:04ECH         LINE#         337
+  C:04EFH         LINE#         338
+  C:04F1H         LINE#         339
+  C:04F3H         LINE#         340
+  C:04F5H         LINE#         376
   -------         ENDPROC       _DELAY_10MS
   -------         ENDMOD        RC522
 
   -------         MODULE        ?C?CLDOPTR
   C:022CH         PUBLIC        ?C?CLDOPTR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/24/2019  20:06:17  PAGE 12
+
+
   -------         ENDMOD        ?C?CLDOPTR
 
   -------         MODULE        ?C?CSTPTR
@@ -626,5 +676,5 @@ SYMBOL TABLE OF MODULE:  RC522 (?C_STARTUP)
   C:028DH         PUBLIC        ?C?ISTPTR
   -------         ENDMOD        ?C?ISTPTR
 
-Program Size: data=68.0 xdata=0 code=1320
+Program Size: data=70.0 xdata=0 code=1388
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

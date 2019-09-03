@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   MAIN                                                              08/14/2019 19:10:59 PAGE 1   
+C51 COMPILER V9.59.0.0   MAIN                                                              08/24/2019 20:06:17 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
@@ -21,64 +21,89 @@ line level    source
   12   1      }
   13          
   14          void Auto_Reader(void){
-  15   1        while(1){
-  16   2          if(PcdRequest(0x52,Temp)==MI_OK){  //寻卡，成功后Temp数组为卡类型
-  17   3            if(PcdAnticoll(UID)==MI_OK){    //防冲突，UID数组数据为卡序列号
-  18   4              CALL_isr_UART();        //开串口中断将UID数组前四个字节上传到串口调试助手
-  19   4              feeb();                 //调用蜂鸣器提示           
-  20   4            }
-  21   3          } 
-  22   2          else ff = 0;//寻卡失败
-  23   2        } 
-  24   1      }
-  25          
-  26          void InitializeSystem(){
-  27   1        SCON=0X50;      //设置为工作方式1
-  28   1        TMOD=0X21;      //设置计数器工作方式2
-  29   1        PCON=0X80;      //波特率加倍
-  30   1        TH1=0XF3;       //计数器初始值设置，注意波特率是4800的
-  31   1        TL1=0XF3;
-  32   1        REN = 1;
-  33   1        ES=1;           //打开接收中断
-  34   1        EA=1;           //打开总中断
-  35   1        TR1=1;    
-  36   1        ff = 0;
-  37   1        PcdReset();
-  38   1        PcdAntennaOff(); 
-  39   1        PcdAntennaOn();  
-  40   1        M500PcdConfigISOType( 'A' );
-  41   1      }
-  42          
-  43          void isr_UART(void) interrupt 4 using 1{
-  44   1        unsigned char i;
-  45   1        if(TI){
-  46   2          TI=0;
-  47   2          for(i=0;i<4;i++){
-  48   3            SBUF=UID[i];
-  49   3            while(!TI);
-  50   3            TI=0;     
-  51   3          }
-  52   2          REN=1;
-  53   2        }
-  54   1      }
-  55          
-C51 COMPILER V9.59.0.0   MAIN                                                              08/14/2019 19:10:59 PAGE 2   
+  15   1        int tar;
+  16   1        while(1){
+  17   2          if(PcdRequest(0x52,Temp)==MI_OK){  //寻卡，成功后Temp数组为卡类型
+  18   3            if(PcdAnticoll(UID)==MI_OK){    //防冲突，UID数组数据为卡序列号
+  19   4              CALL_isr_UART();        //开串口中断将UID数组前四个字节上传到串口调试助手
+  20   4              feeb();                 //调用蜂鸣器提示 
+  21   4            }
+  22   3          } 
+  23   2          else ff = 0;//寻卡失败
+  24   2        } 
+  25   1      }
+*** WARNING C280 IN LINE 15 OF MAIN.c: 'tar': unreferenced local variable
+  26          
+  27          void InitializeSystem(){
+  28   1        SCON=0X50;      //设置为工作方式1
+  29   1        TMOD=0X21;      //设置计数器工作方式2
+  30   1        PCON=0X80;      //波特率加倍
+  31   1        TH1=0XF3;       //计数器初始值设置，注意波特率是4800的
+  32   1        TL1=0XF3;
+  33   1        REN = 1;
+  34   1        ES=1;           //打开接收中断
+  35   1        EA=1;           //打开总中断
+  36   1        TR1=1;    
+  37   1        ff = 0;
+  38   1        PcdReset();
+  39   1        PcdAntennaOff(); 
+  40   1        PcdAntennaOn();  
+  41   1        M500PcdConfigISOType( 'A' );
+  42   1      }
+  43          
+  44          void delay_ms(int ms)
+  45          {
+  46   1        int i, j;
+  47   1        for (i = ms; i > 0; i--)
+  48   1          for (j = 110; j > 0; j--);
+  49   1      }
+  50          
+  51          void show_led()
+  52          {
+  53   1        int i;
+  54   1        led = 0;
+C51 COMPILER V9.59.0.0   MAIN                                                              08/24/2019 20:06:17 PAGE 2   
 
-  56          void main( ){   
-  57   1        InitializeSystem( );
-  58   1        Auto_Reader();
+  55   1        for (i = 0; i < 3; i++) {
+  56   2          delay_ms(200);
+  57   2          led = ~led;
+  58   2        }
   59   1      }
+  60          
+  61          void isr_UART(void) interrupt 4 using 1{
+  62   1        unsigned char i;
+  63   1        if(RI)
+  64   1         {
+  65   2           show_led();
+  66   2           led = 1;
+  67   2           RI = 0;  //串口中断标志不能自己清除，需要手动清除
+  68   2         }
+  69   1        if(TI){
+  70   2          TI=0;
+  71   2          for(i=0;i<4;i++){
+  72   3            SBUF=UID[i];
+  73   3            while(!TI);
+  74   3            TI=0;     
+  75   3          }
+  76   2          REN=1;
+  77   2        }
+  78   1      }
+  79          
+  80          void main( ){   
+  81   1        InitializeSystem( );
+  82   1        Auto_Reader();
+  83   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    153    ----
+   CODE SIZE        =    221    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      9    ----
+   DATA SIZE        =      9       2
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

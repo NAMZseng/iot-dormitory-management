@@ -41,8 +41,31 @@ void InitializeSystem(){
 	M500PcdConfigISOType( 'A' );
 }
 
+void delay_ms(int ms)
+{
+	int i, j;
+	for (i = ms; i > 0; i--)
+		for (j = 110; j > 0; j--);
+}
+
+void show_led()
+{
+	int i;
+	led = 0;
+	for (i = 0; i < 3; i++) {
+		delay_ms(200);
+		led = ~led;
+	}
+}
+
 void isr_UART(void) interrupt 4 using 1{
   unsigned char i;
+	if(RI)
+   {
+		 show_led();
+		 led = 1;
+     RI = 0;	//串口中断标志不能自己清除，需要手动清除
+   }
 	if(TI){
 		TI=0;
 		for(i=0;i<4;i++){
