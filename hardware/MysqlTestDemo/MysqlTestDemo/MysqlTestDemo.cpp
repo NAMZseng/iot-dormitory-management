@@ -14,6 +14,7 @@ Description:串口接收IC卡数据并上传数据库处理
 #include <mysql.h>
 #include <stdio.h>
 #include <string>
+#include<time.h>
 #include <string.h>
 #include <iostream>
 
@@ -21,18 +22,14 @@ Description:串口接收IC卡数据并上传数据库处理
 #pragma warning(disable:4996)
 using namespace std;
 
+typedef long long LL;
+typedef long long Datatype;
+
 const char user[] = "easy"; //root
 const char pswd[] = "root"; //mysqlRoot.50
 const char host[] = "127.0.0.1"; //49.232.57.160
 const char db_name[] = "android"; //student_test
 unsigned int port = 3306;
-
-//const char user[] = "root"; //root
-//const char pswd[] = ""; //
-//const char host[] = "49.232.57.160"; //49.232.57.160
-//const char db_name[] = "student_test"; //student_test
-//unsigned int port = 3306;
-
 
 HANDLE hCom;
 unsigned char str[5];
@@ -61,11 +58,14 @@ Return:                  //
 Others:                  // 
 
 *************************************************/
-void Test_Write_In_Mysql(MYSQL &myCont, char *no)
+void Test_Write_In_Mysql(MYSQL &myCont, Datatype no, char *tim)
 {
-	char sql[105] = "insert into card(UID) values(\'";
-	strcat_s(sql, no);
+	char sql[105] = "insert into card(UID, TIME) values(\'";
+	strcat_s(sql, to_string(no).c_str());
+	strcat_s(sql, "\',\'");
+	strcat_s(sql, tim);
 	strcat_s(sql, "\')\0");
+	//cout << sql << endl;
 	if (!mysql_query(&myCont, sql)) {
 		cout << "插入成功" << endl;
 	}
@@ -73,6 +73,16 @@ void Test_Write_In_Mysql(MYSQL &myCont, char *no)
 		cout << "插入失败" << endl;
 		cout << mysql_error(&myCont) << endl;
 	}
+}
+
+
+int ChangeIntoInt(char *str)
+{
+	int ans = 0;
+	for (int i = 0; i < strlen(str); i++) {
+		ans = ans * 10 + (int)(str[i] - '0');
+	}
+	return ans;
 }
 
 
@@ -133,13 +143,14 @@ void Uart_Get_Data(MYSQL &myCont, int &res, MYSQL_RES *result, MYSQL_ROW &sql_ro
 	dcb.StopBits = ONE5STOPBITS;           //1个停止位
 	SetCommState(hCom, &dcb);
 	DWORD wCount = 4;                      //读取的字节数 
+	DWORD yCount = 1;                      //写入的字节数
 	BOOL bReadStat;
-
+	
 	while (1)
 	{
 		PurgeComm(hCom, PURGE_TXCLEAR |    //清空缓冲区
 			PURGE_RXCLEAR);
-		bReadStat = ReadFile(hCom, str, 4, &wCount, NULL);
+		bReadStat = ReadFile(hCom, str, 8, &wCount, NULL);
 		if (!bReadStat) {
 			printf("读取串口失败!");
 			exit(0);
@@ -147,78 +158,30 @@ void Uart_Get_Data(MYSQL &myCont, int &res, MYSQL_RES *result, MYSQL_ROW &sql_ro
 		else {
 			//数据处理
 			str[4] = '\0';
-			int tar = (int)str[0];         //卡号的首位位标记位
-			bool flag = true;              //防止误读标记
-			if (tar == 144 || tar == 16) {
-				strcpy(no, "1607094270");  //A card
+			LL val = 0;
+			char cstr[3];
+			int len = 0;
+			int tmp = 0;
+			memset(cstr, 0, sizeof(cstr));
+			for (int i = 0; i < 4; i++) {
+				sprintf(cstr, "%d", str[i]);
+				tmp = ChangeIntoInt(cstr);
+				if (tmp < 10)
+					val *= 10;
+				else if (tmp >= 10 && tmp < 100)
+					val *= 100;
+				else if (tmp >= 100)
+					val *= 1000;
+				val += tmp;
 			}
-			else if (tar == 17 || tar == 49) {
-				strcpy(no, "1607094271");  //B card
-			}
-			else if (tar == 135 || tar == 199) {
-				strcpy(no, "1607094272");  //C card
-			}
-			else if (tar == 233) {
-				strcpy(no, "1607094273");  //D card
-			}
-			else {
-				flag = false;              //未检测到数据
-			}
-			if (flag) {
-				printf("已检测到学生学号：%s, 状态：%d\n", no, tar);
-				char sql[255] = "select * from student where no = \'";
-				strcat(sql, no);
-				strcat(sql, "\'");
-				cout << sql << endl;
-				res = mysql_query(&myCont, sql);                    //查询
-				if (!res)
-				{
-					result = mysql_store_result(&myCont);           //把查询的数据从服务器端取到客户端，然后缓存起来，放在句柄mysql里面
-					if (result)
-					{
-						sql_row = mysql_fetch_row(result);          //将查询结构保存在一个数组里
-						if (sql_row)                                //有该学生
-						{
-							cout << "该学生是本宿舍学生，通过" << endl;
-							if (strcmp(sql_row[2], "0") == 0) {     //状态为0要更新为1
-								strcpy(sql, "update student set status=1 where no=");
-								strcat(sql, sql_row[0]);
-
-								if (!mysql_query(&myCont, sql)) {
-									cout << "该学生进入宿舍" << endl;
-								}
-								else {
-									cout << "shibai1" << endl;
-									cout << mysql_error(&myCont) << endl;
-								}
-							}
-							else if (strcmp(sql_row[2], "1") == 0) { //状态为1要更新成0
-								strcpy(sql, "update student set status=0 where no=");
-								strcat(sql, sql_row[0]);
-
-								if (!mysql_query(&myCont, sql)) {
-									cout << "该学生离开宿舍" << endl;
-								}
-								else {
-									cout << "shibai2" << endl;
-									cout << mysql_error(&myCont) << endl;
-								}
-							}
-						}
-						else                                         //无该学生
-							cout << "该学生不是本宿舍学生，警报" << endl;
-					}
-				}
-				else
-				{
-					cout << "error：查询数据库失败" << endl;
-				}
-			}
-			else {
-				cout << "error：读卡失误请重新放置卡片" << endl;
-			}
+			cout << val << endl;
+			time_t now_time = time(NULL);                 //获取系统时间                       
+			tm *t_tm = localtime(&now_time);              //获取本地时间  
+			char temp[105];
+			sprintf(temp, "%s", asctime(t_tm));
+			Test_Write_In_Mysql(myCont, val, temp);
 		}
-		Sleep(500);
+		Sleep(100);
 	}
 }
 
@@ -234,7 +197,8 @@ int main()
 	{
 		mysql_query(&myCont, "SET NAMES UTF8");       //设置编码格式
 		cout << "链接数据库成功" << endl;
-		system("pause");
+		system("pause");                            
+		
 		Uart_Get_Data(myCont, res, result, sql_row);  //串口检测
 	}
 	else
