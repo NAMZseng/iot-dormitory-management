@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pic/rainUmbrella.png</file>
+        <file>pic/sun.png</file>
+        <file>pic/gas.png</file>
+        <file>pic/secure.png</file>
+        <file>pic/fire.png</file>
+        <file>pic/unfire.png</file>
+        <file>pic/human.png</file>
+        <file>pic/safe.png</file>
+        <file>pic/fail.png</file>
+        <file>pic/success.png</file>
+        <file>pic/smoke.png</file>
+    </qresource>
+</RCC>
