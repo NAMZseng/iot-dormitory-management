@@ -1,4 +1,4 @@
-﻿package nuc.edu.dormitorydemo.pager;
+package nuc.edu.dormitorydemo.pager;
 
 /**
  * 个人信息界面
@@ -209,7 +209,6 @@ public class MinePager extends BasePager {
                     break;
                 case R.id.mine_btn_exit:
                     ((Activity)context).finish();
-	    break;
                     default:
                         break;
             }

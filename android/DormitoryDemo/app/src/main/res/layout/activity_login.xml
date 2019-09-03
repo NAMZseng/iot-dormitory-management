@@ -39,6 +39,7 @@
                 />
 
             <EditText
+                android:textColor="#000000"
                 android:background="@drawable/edittext_border"
                 android:hint="输入手机号"
                 android:gravity="center"
@@ -69,6 +70,7 @@
                 />
 
             <EditText
+                android:textColor="#000000"
                 android:gravity="center"
                 android:background="@drawable/edittext_border"
                 android:hint="输入密码"
@@ -93,6 +95,7 @@
 -->
 
     <View
+        android:paddingTop="5dp"
         android:layout_below="@+id/login_ll_input"
         android:id="@+id/view_split"
         android:layout_width="match_parent"
@@ -102,6 +105,7 @@
         />
 
     <Button
+        android:paddingTop="10dp"
         android:gravity="center"
         android:layout_below="@+id/view_split"
         android:background="@drawable/btn_login"

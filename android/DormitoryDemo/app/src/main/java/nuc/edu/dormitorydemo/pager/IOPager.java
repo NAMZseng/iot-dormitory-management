@@ -105,6 +105,9 @@ public class IOPager extends BasePager {
     @ViewInject(R.id.notback_lv)
     private ListView notback_lv;
 
+    private boolean isFirstLoad_normal = false;
+    private boolean isFirstLoad_unnormal = false;
+
     private ArrayList<Integer> list;
 
     private ArrayList<StudentInfo> studentInfos;
@@ -138,12 +141,11 @@ public class IOPager extends BasePager {
             public void onClick(View v) {
                 if(io_rb_normal.isChecked()){
                     getNormalDataFromNet();
-                    io_barchart.invalidate();
                 }
                 else if(io_rb_unnormal.isChecked()){
                     getUnnormalData();
                 }else {
-
+                    getNotBackData();
                 }
 
             }
@@ -161,7 +163,6 @@ public class IOPager extends BasePager {
                         recyclerView.setVisibility(View.GONE);
                         io_ll_title.setVisibility(View.GONE);
                         notback_lv.setVisibility(View.GONE);
-                        io_btn_refresh.setVisibility(View.VISIBLE);
                         io_tv_title.setText("正常出入情况");
                         getNormalDataFromNet();
                         break;
@@ -170,7 +171,6 @@ public class IOPager extends BasePager {
                         io_barchart.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         notback_lv.setVisibility(View.GONE);
-                        io_btn_refresh.setVisibility(View.VISIBLE);
                         io_tv_title.setText("异常出入情况");
                         getUnnormalData();
                         break;
@@ -180,7 +180,6 @@ public class IOPager extends BasePager {
                         io_ll_title.setVisibility(View.GONE);
                         io_tv_title.setText("未归寝人员  （点击学生查看详情）");
                         notback_lv.setVisibility(View.VISIBLE);
-                        io_btn_refresh.setVisibility(View.GONE);
                         getNotBackData();
                         break;
                 }
@@ -189,6 +188,7 @@ public class IOPager extends BasePager {
         io_rg_state.check(R.id.io_rb_normal);
         return view;
     }
+
 
     /**
      * 获取未归寝人员数据
@@ -408,6 +408,7 @@ public class IOPager extends BasePager {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         IOAdapter adapter = new IOAdapter(list);
         recyclerView.setAdapter(adapter); //适配器
 
@@ -418,6 +419,8 @@ public class IOPager extends BasePager {
      * @param json
      */
     private void parseJson(String json) {
+
+        list = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(json);
             int in = jsonObject.optInt("in");
@@ -428,12 +431,21 @@ public class IOPager extends BasePager {
             e.printStackTrace();
         }
         io_barchart.setClickable(false);
-        setDescription("出入情况");
-        setLegend();
-        setYAxis();
-        setXAxis();
-        setChartData();
-
+        if(!isFirstLoad_normal){
+            isFirstLoad_normal = true;
+            setDescription("出入情况");
+            setLegend();
+            setYAxis();
+            setXAxis();
+            setChartData();
+        }else{
+            io_barchart.clearValues();
+            setDescription("出入情况");
+            setLegend();
+            setYAxis();
+            setXAxis();
+            setChartData();
+        }
     }
 
     /**
@@ -456,7 +468,6 @@ public class IOPager extends BasePager {
         float y =  Utils.calcTextHeight(paint, descriptionStr) + Utils.convertDpToPixel(24);
         description.setPosition(x, y);
         io_barchart.setDescription(description);
-
     }
 
     /**
