@@ -39,7 +39,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         StudentInfo student = studentInfos.get(i);
         myViewHolder.num.setText("学号：" + student.getNum()+"");
-        myViewHolder.name.setText("姓名：" + student.getName());
+        myViewHolder.name.setText(student.getName());
         myViewHolder.school.setText("学院：" + student.getSchool());
         myViewHolder.major.setText("专业：" + student.getMajor());
         myViewHolder.teacherName.setText("班主任：" + student.getTeacherName());

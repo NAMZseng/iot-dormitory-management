@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@drawable/inputbackground"
+    android:layout_height="250dp">
+
+    <TextView
+        android:id="@+id/mine_modify_title"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手机号修改"
+        android:textColor="@color/colorAccent"
+        android:textSize="25dp"
+        />
 
     <EditText
         android:paddingLeft="8dp"
         android:id="@+id/text_tel"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/frame"
+        android:background="@drawable/view_frame"
         android:hint="手机号"
         android:minHeight="45dp"
         android:textSize="18sp" />
@@ -19,27 +30,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/frame"
+        android:background="@drawable/view_frame"
         android:hint="密码"
         android:minHeight="45dp"
         android:textSize="18sp" />
 
     <EditText
-
+        android:layout_gravity="center_horizontal"
         android:paddingLeft="8dp"
         android:id="@+id/text_again"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/frame"
+        android:background="@drawable/view_frame"
         android:gravity="top|left"
         android:hint="重新输入"
         android:minHeight="45dp"
         android:textSize="18sp" />
 
     <Button
+        android:background="@drawable/btn_login"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/btn_save_pop"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="保存" />

@@ -8,6 +8,8 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -37,9 +39,18 @@ public class StudentPager extends BasePager {
     }
 
     private List<StudentInfo> studentInfoList = null;
+    private List<StudentInfo> roomNumList = null;
+    private List<StudentInfo> SchoolList = null;
+    private List<StudentInfo> majorList = null;
+
+//    @ViewInject(R.id.student_btn_search)
+//    private Button student_btn_search;
 
     @ViewInject(R.id.student_recylerview)
     private RecyclerView recyclerView;
+
+//    @ViewInject(R.id.student_search)
+//    private EditText student_search;
 
     @Override
     public View initView() {
@@ -48,7 +59,8 @@ public class StudentPager extends BasePager {
         x.view().inject(this, view);
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,  StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1,  StaggeredGridLayoutManager.VERTICAL));
+
 
         return view;
     }
@@ -88,6 +100,7 @@ public class StudentPager extends BasePager {
 
     private void processData(String result) {
         studentInfoList = parseJson(result);
+
         StudentAdapter adapter = new StudentAdapter(studentInfoList);
         recyclerView.setAdapter(adapter);
     }

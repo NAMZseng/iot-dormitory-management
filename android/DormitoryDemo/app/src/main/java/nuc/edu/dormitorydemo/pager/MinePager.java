@@ -4,14 +4,12 @@ package nuc.edu.dormitorydemo.pager;
  * 个人信息界面
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,11 +38,16 @@ public class MinePager extends BasePager {
     @ViewInject(R.id.mine_tv_name)
     private TextView mine_tv_name;
 
+
+
     @ViewInject(R.id.mine_tv_tel)
     private TextView mine_tv_tel;
 
     @ViewInject(R.id.mine_tv_buildingNum)
     private TextView mine_tv_buildingNum;
+
+    @ViewInject(R.id.mine_btn_exit)
+    private Button mine_btn_exit;
 
     @ViewInject(R.id.mine_tv_title)
     private TextView mine_tv_title;
@@ -68,6 +71,7 @@ public class MinePager extends BasePager {
 
         tel.setOnClickListener(new MyOnClickListener());
         pwd.setOnClickListener(new MyOnClickListener());
+        mine_btn_exit.setOnClickListener(new MyOnClickListener());
         return view;
     }
 
@@ -77,7 +81,7 @@ public class MinePager extends BasePager {
         mine_tv_name.setText(CacheUtils.getUser(context).getName());
         mine_tv_tel.setText(CacheUtils.getUser(context).getTel());
         mine_tv_title.setText(CacheUtils.getUser(context).getTitle());
-        mine_tv_buildingNum.setText(CacheUtils.getUser(context).getBuildingNum()+"");
+        mine_tv_buildingNum.setText(CacheUtils.getUser(context).getBuildingNum()+"号楼");
     }
 
     public void showEditDialog(View view) {
@@ -92,8 +96,8 @@ public class MinePager extends BasePager {
             switch (v.getId()){
                 case R.id.mine_btn_pwd:
                     flag = true;
-
                     showEditDialog(v);
+                    createUserDialog.mine_modify_title.setText("密码修改");
                     createUserDialog.text_tel.setHint("请输入原密码");
                     createUserDialog.text_tel.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
                     createUserDialog.text_pwd.setHint("请输入新密码");
@@ -105,6 +109,7 @@ public class MinePager extends BasePager {
                 case R.id.mine_btn_tel:
                     flag = false;
                     showEditDialog(v);
+                    createUserDialog.mine_modify_title.setText("手机号修改");
                     createUserDialog.text_tel.setHint("请输入密码");
                     createUserDialog.text_tel.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
                     createUserDialog.text_pwd.setHint("请输入新手机号");
@@ -202,11 +207,12 @@ public class MinePager extends BasePager {
 
                     }
                     break;
+                case R.id.mine_btn_exit:
+                    ((Activity)context).finish();
                     default:
                         break;
             }
         }
     }
-
 
 }

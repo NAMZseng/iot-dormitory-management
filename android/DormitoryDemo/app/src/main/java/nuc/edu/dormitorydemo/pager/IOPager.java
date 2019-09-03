@@ -161,6 +161,7 @@ public class IOPager extends BasePager {
                         recyclerView.setVisibility(View.GONE);
                         io_ll_title.setVisibility(View.GONE);
                         notback_lv.setVisibility(View.GONE);
+                        io_btn_refresh.setVisibility(View.VISIBLE);
                         io_tv_title.setText("正常出入情况");
                         getNormalDataFromNet();
                         break;
@@ -169,6 +170,7 @@ public class IOPager extends BasePager {
                         io_barchart.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         notback_lv.setVisibility(View.GONE);
+                        io_btn_refresh.setVisibility(View.VISIBLE);
                         io_tv_title.setText("异常出入情况");
                         getUnnormalData();
                         break;

@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user_pwd;
     private EditText user_name;
     private Button login;
-    private CheckBox cb_remember;
+//    private CheckBox cb_remember;
     public static final String url = Constants.NET_URL + "staff/login";
 
     @Override
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         user_pwd = (EditText) findViewById(R.id.user_pwd);
         user_name = (EditText) findViewById(R.id.user_name);
 
-        cb_remember = (CheckBox) findViewById(R.id.cb_remember);
+//        cb_remember = (CheckBox) findViewById(R.id.cb_remember);
         login = (Button) findViewById(R.id.login);
 //        if(CacheUtils.getRememeber(LoginActivity.this, "rem")){
 //            Intent intent = new Intent(LoginActivity.this, MainActivity.class);

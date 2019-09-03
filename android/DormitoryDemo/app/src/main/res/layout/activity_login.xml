@@ -1,71 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".activity.LoginActivity">
 
-    <RelativeLayout
+
+    <ImageView
+        android:paddingTop="10dp"
+        android:id="@+id/login_img_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/title" />
+
+
+    <LinearLayout
+        android:id="@+id/login_ll_input"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login_img_title"
+        android:paddingTop="10dp"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/login_tv_tel"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:text="手机号"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:hint="输入手机号"
-            android:layout_toRightOf="@+id/login_tv_tel"
-            android:id="@+id/user_name"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login_img"
+                />
+
+            <EditText
+                android:background="@drawable/edittext_border"
+                android:hint="输入手机号"
+                android:gravity="center"
+                android:id="@+id/user_name"
+                android:layout_width="270dp"
+                android:layout_height="30dp"
+                />
+
+        </LinearLayout>
+
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
+
+
             />
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:id="@+id/login_tv_pwd"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:text="密 码"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:layout_toRightOf="@+id/login_tv_pwd"
-            android:hint="输入密码"
-            android:inputType="textPassword"
-            android:id="@+id/user_pwd"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-    </RelativeLayout>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login_pwd"
+                />
+
+            <EditText
+                android:gravity="center"
+                android:background="@drawable/edittext_border"
+                android:hint="输入密码"
+                android:inputType="textPassword"
+                android:id="@+id/user_pwd"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                />
+
+        </LinearLayout>
 
 
+    </LinearLayout>
 
-
+    <!--
     <CheckBox
+        android:layout_below="@+id/login_ll_input"
         android:id="@+id/cb_remember"
         android:text="记住我"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+-->
 
-    <RelativeLayout
+    <View
+        android:layout_below="@+id/login_ll_input"
+        android:id="@+id/view_split"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+        />
 
     <Button
+        android:gravity="center"
+        android:layout_below="@+id/view_split"
+        android:background="@drawable/btn_login"
+        android:layout_gravity="center_horizontal"
         android:paddingLeft="8dp"
         android:layout_centerInParent="true"
         android:id="@+id/login"
@@ -74,9 +114,4 @@
         android:layout_height="wrap_content" />
 
 
-
-    </RelativeLayout>
-
-
-
-</LinearLayout>
+</RelativeLayout>

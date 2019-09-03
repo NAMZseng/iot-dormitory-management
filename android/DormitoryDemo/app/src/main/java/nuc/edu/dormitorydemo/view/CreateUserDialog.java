@@ -10,6 +10,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import org.xutils.view.annotation.ViewInject;
 
 import nuc.edu.dormitorydemo.R;
 
@@ -28,6 +31,7 @@ public class CreateUserDialog extends Dialog {
 
     public EditText text_again;
 
+    public TextView mine_modify_title;
 
     private View.OnClickListener mClickListener;
 
@@ -48,6 +52,7 @@ public class CreateUserDialog extends Dialog {
         // 指定布局
         this.setContentView(R.layout.staff_dialog);
 
+        mine_modify_title = (TextView) findViewById(R.id.mine_modify_title);
         text_tel = (EditText) findViewById(R.id.text_tel);
         text_pwd = (EditText) findViewById(R.id.text_password);
         text_again = (EditText) findViewById(R.id.text_again);
