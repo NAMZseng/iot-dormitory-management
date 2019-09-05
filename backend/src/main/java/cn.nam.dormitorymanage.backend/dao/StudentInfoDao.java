@@ -20,4 +20,27 @@ public interface StudentInfoDao {
      * @return 学生列表List<StudentInfo>
      */
     List<StudentInfo> getStudents(@Param("buildingNum") int buildingNum);
+
+    /**
+     * 显示所有学生信息
+     *
+     * @return
+     */
+    List<StudentInfo> list();
+
+    /**
+     * 添加学生信息
+     *
+     * @param studentInfo
+     * @return
+     */
+    int add(StudentInfo studentInfo);
+
+    /**
+     * 删除学生
+     *
+     * @param num
+     * @return
+     */
+    int delete(@Param("num") int num);
 }

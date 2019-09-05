@@ -35,4 +35,15 @@ public interface HumitureInfoDao {
      */
     List<HumitureInfo> getTodayData(@Param("buildingNum") int buildingNum,
                                     @Param("dawnTime") String dawnTime);
+
+    /**
+     * @return
+     */
+    List<HumitureInfo> list();
+
+    /**
+     * @param collectTime
+     * @return
+     */
+    int delete(@Param("collectTime")String collectTime);
 }

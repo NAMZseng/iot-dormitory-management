@@ -50,8 +50,8 @@
 
     <select id="getTodayBlockInfo" resultType="BlockInfo">
         SELECT s.name AS student_name, s.num, s.teacher_tel, b.building_num, b.access_time
-        FROM block_info b
-            INNER JOIN student_info s ON b.student_num = s.num
+        FROM block_info b INNER JOIN student_info s
+            ON b.student_num = s.num
         WHERE b.building_num = #{buildingNum}
             AND b.access_time >= #{dawnTime}
         ORDER BY access_time DESC
@@ -76,5 +76,28 @@
             WHERE temp.access_status = -1
         )
     </select>
+
+    <select id="listBlock" resultType="BlockInfo">
+        SELECT s.name AS student_name, s.num, s.teacher_tel, b.building_num, b.access_time
+        FROM block_info b INNER JOIN student_info s
+            ON b.student_num = s.num
+    </select>
+
+    <select id="listAccess" resultType="AccessInfo">
+        SELECT a.student_num, s.name, a.building_num, access_time,
+                CASE access_status WHEN 1 THEN 'in' ELSE 'out' END AS access_status
+        FROM access_info a INNER JOIN student_info s
+            ON a.student_num = s.num
+    </select>
+
+    <delete id="deleteBlock">
+        DELETE FROM block_info
+        WHERE access_time = #{accessTime}
+    </delete>
+
+    <delete id="deleteAccess">
+        DELETE FROM access_info
+        WHERE access_time = #{accessTime}
+    </delete>
 
 </mapper>

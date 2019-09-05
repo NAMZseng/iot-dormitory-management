@@ -12,4 +12,21 @@
         WHERE building_num = #{buildingNum}
     </select>
 
+    <select id="list" resultType="StudentInfo">
+        SELECT num, name, school, major, teacher_name
+            ,teacher_tel, building_num, room_num
+        FROM student_info
+    </select>
+
+    <insert id="add" parameterType="StudentInfo">
+        INSERT INTO student_info(num, name, school, major, teacher_name
+                            ,teacher_tel, building_num, room_num)
+        VALUES(#{num},#{name},#{school},#{major},#{teacherName},
+                #{teacherTel},#{buildingNum},#{roomNum})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM student_info
+        WHERE  num = #{num}
+    </delete>
 </mapper>

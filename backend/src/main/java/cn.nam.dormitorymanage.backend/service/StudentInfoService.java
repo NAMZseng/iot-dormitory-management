@@ -26,4 +26,30 @@ public class StudentInfoService {
     public List<StudentInfo> getStudents(int buildingNum) {
         return studentInfoDao.getStudents(buildingNum);
     }
+
+    /**
+     *
+     * @return
+     */
+    public List<StudentInfo> list(){
+        return studentInfoDao.list();
+    }
+
+    /**
+     * @param studentInfo
+     * @return
+     */
+    public int add(StudentInfo studentInfo) {
+        return studentInfoDao.add(studentInfo);
+    }
+
+    public int delete(String[] selectIds) {
+        int sum = 0;
+
+        for (int i = 0; i < selectIds.length; i++) {
+            sum += studentInfoDao.delete(Integer.parseInt(selectIds[i]));
+        }
+
+        return sum;
+    }
 }

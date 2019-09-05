@@ -1,14 +1,18 @@
 package cn.nam.dormitorymanage.backend.controller;
 
+import cn.nam.dormitorymanage.backend.entity.AccessInfo;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
+import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.AccessInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -85,5 +89,96 @@ public class AccessInfoController {
     @ResponseBody
     public List<StudentInfo> getOutStudentInfo(@RequestParam("buildingNum") int buildingNum) {
         return accessInfoService.getOutStudentInfo(buildingNum);
+    }
+
+    /**
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping("listBlock")
+    public String listBlock(Model model, HttpSession session) {
+        User userObj = (User) session.getAttribute("user");
+        if (userObj != null) {
+            // 正确登陆
+            List<BlockInfo> blockList = accessInfoService.listBlock();
+            model.addAttribute("blockList", blockList);
+
+            return "backend/blockList";
+
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+
+    /**
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping("listAccess")
+    public String listAccess(Model model, HttpSession session) {
+        User userObj = (User) session.getAttribute("user");
+        if (userObj != null) {
+            // 正确登陆
+            List<AccessInfo> accessList = accessInfoService.listAccess();
+            model.addAttribute("accessList", accessList);
+
+            return "backend/accessList";
+
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+    /**
+     * @param model
+     * @param accessTime
+     * @return
+     */
+    @RequestMapping("deleteBlock")
+    @ResponseBody
+    public String deleteBlock(Model model, @RequestParam("accessTime") String accessTime) {
+        int flag = 0;
+        if (accessTime != null && !"".equals(accessTime)) {
+            String[] selectIds = accessTime.split("/");
+            try {
+                flag = accessInfoService.deleteBlock(selectIds);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (flag > 0) {
+            return "success";
+        } else {
+            return "failed";
+        }
+    }
+
+    /**
+     * @param model
+     * @param accessTime
+     * @return
+     */
+    @RequestMapping("deleteAccess")
+    @ResponseBody
+    public String deleteAccess(Model model, @RequestParam("accessTime") String accessTime) {
+        int flag = 0;
+        if (accessTime != null && !"".equals(accessTime)) {
+            String[] selectIds = accessTime.split("/");
+            try {
+                flag = accessInfoService.deleteAccess(selectIds);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (flag > 0) {
+            return "success";
+        } else {
+            return "failed";
+        }
     }
 }

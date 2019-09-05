@@ -2,6 +2,7 @@ package cn.nam.dormitorymanage.backend.service;
 
 import cn.nam.dormitorymanage.backend.dao.AccessInfoDao;
 import cn.nam.dormitorymanage.backend.entity.AccessCount;
+import cn.nam.dormitorymanage.backend.entity.AccessInfo;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,5 +100,47 @@ public class AccessInfoService {
      */
     public List<StudentInfo> getOutStudentInfo(int buildingNum) {
         return accessInfoDao.getOutStudentInfo(buildingNum);
+    }
+
+    /**
+     * @return
+     */
+    public List<BlockInfo> listBlock() {
+        return accessInfoDao.listBlock();
+    }
+
+    /**
+     * @return
+     */
+    public List<AccessInfo> listAccess() {
+        return accessInfoDao.listAccess();
+    }
+
+    /**
+     * @param selectIds
+     * @return
+     */
+    public int deleteAccess(String[] selectIds) {
+        int sum = 0;
+
+        for (int i = 0; i < selectIds.length; i++) {
+            sum += accessInfoDao.deleteAccess(selectIds[i]);
+        }
+
+        return sum;
+    }
+
+    /**
+     * @param selectIds
+     * @return
+     */
+    public int deleteBlock(String[] selectIds) {
+        int sum = 0;
+
+        for (int i = 0; i < selectIds.length; i++) {
+            sum += accessInfoDao.deleteBlock(selectIds[i]);
+        }
+
+        return sum;
     }
 }

@@ -22,7 +22,7 @@ public class HumitureInfo {
      */
     private String location;
     /**
-     * 数据采集时间
+     * 数据采集时间采集时间
      */
     private Date collectTime;
     /**

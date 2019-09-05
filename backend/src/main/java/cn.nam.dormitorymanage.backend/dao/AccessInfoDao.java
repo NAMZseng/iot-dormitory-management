@@ -1,6 +1,7 @@
 package cn.nam.dormitorymanage.backend.dao;
 
 import cn.nam.dormitorymanage.backend.entity.AccessCount;
+import cn.nam.dormitorymanage.backend.entity.AccessInfo;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import org.apache.ibatis.annotations.Param;
@@ -92,4 +93,26 @@ public interface AccessInfoDao {
      * @return 查询为空返回null, 否则返回封装了未归寝的学生信息的List<StudentInfo>
      */
     List<StudentInfo> getOutStudentInfo(@Param("buildingNum") int buildingNum);
+
+    /**
+     * @return
+     */
+    List<BlockInfo> listBlock();
+
+    /**
+     * @return
+     */
+    List<AccessInfo> listAccess();
+
+    /**
+     * @param accessTime
+     * @return
+     */
+    int deleteBlock(@Param("accessTime")String accessTime);
+
+    /**
+     * @param accessTime
+     * @return
+     */
+    int deleteAccess(@Param("accessTime")String accessTime);
 }

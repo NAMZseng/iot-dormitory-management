@@ -6,7 +6,7 @@ create table building_info(
   `name` char(30) comment '宿舍名称，最多10个汉字',
   `chief_name` char(15) comment '宿舍楼负责人名字',
   `chief_tel` char(11) comment '宿舍楼负责人电话',
-  primary key(num)
+  primary key(studentNum)
 ) engine=innodb default charset=utf8 comment '宿舍楼信息表';
 
 create table staff_info(
@@ -16,7 +16,7 @@ create table staff_info(
   `building_num` tinyint comment '工作所在的宿舍楼号',
   `title` char(30) comment '职称',
   `password` char(30) default '123456' comment 'app登陆密码',
-  primary key(num)
+  primary key(studentNum)
 )engine=innodb default charset=utf8 comment '宿舍楼职工信息表';
 
 create table student_info(
@@ -28,7 +28,7 @@ create table student_info(
   `teacher_tel` char(11) comment '班主任电话',
   `building_num` tinyint comment '所在宿舍楼号',
   `room_num` smallint comment '房间号',
-  primary key(num)
+  primary key(studentNum)
 ) engine=innodb default charset=utf8 comment '学生信息表';
 
 create table access_info(

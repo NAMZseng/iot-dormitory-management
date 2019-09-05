@@ -37,4 +37,25 @@ public class HumitureInfoService {
     public List<HumitureInfo> getTodayData(int buildingNum, String dawnTime) {
         return humitureInfoDao.getTodayData(buildingNum, dawnTime);
     }
+
+    /**
+     * @return
+     */
+    public List<HumitureInfo> list(){
+        return humitureInfoDao.list();
+    }
+
+    /**
+     * @param selectIds
+     * @return
+     */
+    public int delete(String[] selectIds) {
+        int sum = 0;
+
+        for (int i = 0; i < selectIds.length; i++) {
+            sum += humitureInfoDao.delete(selectIds[i]);
+        }
+
+        return sum;
+    }
 }

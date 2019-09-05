@@ -13,11 +13,22 @@
     <select id="getTodayData" resultType="HumitureInfo">
         SELECT a.mac_address, building_num, location, collect_time, temperature
             ,humidity
-        FROM sensors_info a
-            INNER JOIN humiture_info b ON a.mac_address = b.mac_address
+        FROM sensors_info a INNER JOIN humiture_info b
+            ON a.mac_address = b.mac_address
         WHERE a.building_num = #{buildingNum}
             AND collect_time >= #{dawnTime}
         ORDER BY collect_time DESC
     </select>
 
+    <select id="list" resultType="HumitureInfo">
+        SELECT a.mac_address, building_num, location, collect_time, temperature
+            ,humidity
+        FROM sensors_info a INNER JOIN humiture_info b
+            ON a.mac_address = b.mac_address
+    </select>
+
+    <delete id="delete">
+        DELETE FROM humiture_info
+        WHERE collect_time = #{collectTime}
+    </delete>
 </mapper>

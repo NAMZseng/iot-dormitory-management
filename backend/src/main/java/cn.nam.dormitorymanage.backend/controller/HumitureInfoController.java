@@ -1,13 +1,16 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.HumitureInfo;
+import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.HumitureInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -54,5 +57,45 @@ public class HumitureInfoController {
         String dawnTime = sdf.format(new Date());
 
         return humitureInfoService.getTodayData(buildingNum, dawnTime);
+    }
+
+    @RequestMapping("list")
+    public String list(Model model, HttpSession session) {
+        User userObj = (User) session.getAttribute("user");
+        if (userObj != null) {
+            // 正确登陆
+            List<HumitureInfo> humitureList = humitureInfoService.list();
+            model.addAttribute("humitureList", humitureList);
+
+            return "backend/humitureList";
+
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+    /**
+     * @param model
+     * @param collectTime
+     * @return
+     */
+    @RequestMapping("delete")
+    @ResponseBody
+    public String delete(Model model, @RequestParam("collectTime") String collectTime) {
+        int flag = 0;
+        if (collectTime != null && !"".equals(collectTime)) {
+            String[] selectIds = collectTime.split("/");
+            try {
+                flag = humitureInfoService.delete(selectIds);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (flag > 0) {
+            return "success";
+        } else {
+            return "failed";
+        }
     }
 }

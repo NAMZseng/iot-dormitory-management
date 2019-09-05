@@ -104,11 +104,11 @@ body {
 					onclick="$('#test2').toggle(500);">数据管理</li>
 				<li>
 					<ul class="nav nav-tabs nav-stacked" id="test2">
-						<li><a class="ajax-link" href="javascript:void(0);"><i class="icon-home"></i>
+						<li><a class="ajax-link" href="access/listAccess"><i class="icon-home"></i>
 						    <span class="hidden-tablet">人流数据管理</span></a></li>
-						<li><a class="ajax-link" href="javascript:void(0);"><i class="icon-home"></i>
+						<li><a class="ajax-link" href="access/listBlock"><i class="icon-home"></i>
 						    <span class="hidden-tablet">被阻访问数据管理</span></a></li>
-						<li><a class="ajax-link" href="javascript:void(0);"><i class="icon-home"></i>
+						<li><a class="ajax-link" href="humiture/list;"><i class="icon-home"></i>
 						    <span class="hidden-tablet">温湿度数据管理</span></a></li>
 					</ul>
 				</li>
