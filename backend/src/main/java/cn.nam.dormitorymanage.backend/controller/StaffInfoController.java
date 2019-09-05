@@ -6,8 +6,8 @@ import cn.nam.dormitorymanage.backend.service.StaffInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -89,16 +89,61 @@ public class StaffInfoController {
      * @return
      */
     @RequestMapping("list")
-    public String list(Model model, HttpSession session){
-        Object userObj = session.getAttribute("user");
-        if(userObj != null) {
+    public String list(Model model, HttpSession session) {
+
+//        未配置栏截器前时，需在每个方法里加上下面处理
+        User userObj = (User) session.getAttribute("user");
+        if (userObj != null) {
             // 正确登陆
             List<StaffInfo> staffList = staffInfoService.list();
             model.addAttribute("staffList", staffList);
 
             return "backend/staffList";
+
         } else {
-            return "redirect:login";
+            return "redirect:/login";
+        }
+//
+//        List<StaffInfo> staffList = staffInfoService.list();
+//        model.addAttribute("staffList", staffList);
+//
+//        return "backend/staffList";
+
+    }
+
+    /**
+     * @param staffInfo
+     * @return
+     */
+    @RequestMapping(value = "add", method = RequestMethod.POST)
+    public String add(HttpSession session, StaffInfo staffInfo) {
+        staffInfoService.add(staffInfo);
+
+        return "redirect:/staff/list";
+    }
+
+    /**
+     * @param model
+     * @param staffNum
+     * @return
+     */
+    @RequestMapping("delete")
+    @ResponseBody
+    public String delete(Model model, @RequestParam("staffNum") String staffNum) {
+        int flag = 0;
+        if (staffNum != null && !"".equals(staffNum)) {
+            String[] selectIds = staffNum.split(" ");
+            try {
+                flag = staffInfoService.delete(selectIds);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (flag > 0) {
+            return "success";
+        } else {
+            return "failed";
         }
     }
 }

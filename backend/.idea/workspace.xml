@@ -6,30 +6,160 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/hdfsnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hdfsnavigator.xml" afterDir="false" />
+    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="使用boostrap搭建web界面">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ajax-loaders/ajax-loader-8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/arrows-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/arrows-normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/border.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/buttons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/chosen-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/controls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/dialogs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MS5qcGc1344290228.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTAuanBn1344290212.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTEuanBn1344290212.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTIuanBn1344290216.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTMuanBn1344290218.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTQuanBn1344290218.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTUuanBn1344290220.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTYuanBn1344290222.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTcuanBn1344290224.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTguanBn1344290226.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MTkuanBn1344290228.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_Mi5qcGc1344290242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MjAuanBn1344290232.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MjEuanBn1344290232.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MjIuanBn1344290236.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MjMuanBn1344290238.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_MjQuanBn1344290240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_My5qcGc1344290244.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_NC5qcGc1344290246.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_NS5qcGc1344290246.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_Ni5qcGc1344290248.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_Ny5qcGc1344290252.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_OC5qcGc1344290254.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/.tmb/l1_OS5qcGc1344290254.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/gallery/thumbs/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/glyphicons-halflings-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/glyphicons-halflings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/icons-big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/icons-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/slider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/slider_center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/slider_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/iphone-style-checkboxes/slider_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/loading_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-black16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-black32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-blue16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-blue32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-color16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-color32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-darkgray16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-darkgray32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-gray16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-gray32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-green16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-green32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-orange16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-orange32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-red16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-red32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-white16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/opa-icons-white32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/qrcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/qrcode136.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/quicklook-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/toolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/img/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/dao/StaffInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/dao/StaffInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/mapper/StaffInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/mapper/StaffInfoDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/spring/spring-controller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/spring/spring-controller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/index.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/dao/StaffInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/dao/StaffInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/StaffInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/StaffInfoDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-controller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-controller.xml" afterDir="false" />
@@ -74,10 +204,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="69" column="92" lean-forward="true" selection-start-line="69" selection-start-column="92" selection-end-line="69" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+            <state relative-caret-position="285">
+              <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#login#0;class#StaffInfoController#0" />
@@ -92,33 +249,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-888">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="219">
+              <caret line="93" column="40" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#747#748#0" expanded="true" />
-                <element signature="e#777#778#0" expanded="true" />
+                <element signature="method#login#0;class#StaffInfoService#0" />
+                <element signature="method#updatePassword#0;class#StaffInfoService#0" />
+                <element signature="method#updateTel#0;class#StaffInfoService#0" />
+                <element signature="e#2037#2038#0" expanded="true" />
+                <element signature="e#2064#2065#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="23" column="96" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="96" />
+            <state relative-caret-position="462">
+              <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="192">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -144,6 +304,7 @@
       <find>byte</find>
       <find>Param</find>
       <find>log4j</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace>${spring.version}</replace>
@@ -157,16 +318,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/utils/LoginInterceptor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/index.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/trs.js" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/TestDemo.java" />
@@ -201,21 +363,23 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/statics/localjs/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/utils/LoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" />
       </list>
     </option>
   </component>
@@ -330,6 +494,15 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn.nam.dormitorymanage.backend" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -370,15 +543,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="localcss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
               <item name="localjs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -397,6 +561,16 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -572,7 +746,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20978552" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21179625" />
       <window_info x="237" y="241" width="505" height="257" id="Structure" order="2" weight="0.21849866" />
       <window_info id="Hadoop FileSystem" order="3" weight="0.3297587" />
       <window_info id="Designer" order="4" />
@@ -582,7 +756,7 @@
       <window_info anchor="bottom" id="File Transfer" order="2" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3289855" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49865952" visible="true" weight="0.29565218" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49865952" visible="true" weight="0.29565218" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.49565217" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -604,34 +778,35 @@
     </layout>
     <layout-to-restore>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2419571" />
-      <window_info id="Hadoop FileSystem" order="2" weight="0.3297587" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20978552" />
+      <window_info x="237" y="241" width="505" height="257" id="Structure" order="2" weight="0.21849866" />
+      <window_info id="Hadoop FileSystem" order="3" weight="0.3297587" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
-      <window_info anchor="bottom" id="Database Console" order="1" weight="0.3289855" />
+      <window_info anchor="bottom" id="Database Console" order="1" weight="0.3652174" />
       <window_info anchor="bottom" id="File Transfer" order="2" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49865952" weight="0.27101448" />
-      <window_info anchor="bottom" id="Structure" order="6" weight="0.24927536" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.5014493" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.3289855" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3289855" />
-      <window_info anchor="bottom" id="Spring" order="12" weight="0.3289855" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3289855" />
-      <window_info anchor="bottom" id="Java Enterprise" order="15" />
-      <window_info anchor="bottom" id="Event Log" order="16" sideWeight="0.5013405" side_tool="true" weight="0.27101448" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3289855" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49865952" weight="0.29565218" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.49565217" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.3289855" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.26666668" />
+      <window_info anchor="bottom" id="Spring" order="11" weight="0.3289855" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3289855" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5013405" side_tool="true" weight="0.27101448" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.24731903" />
       <window_info anchor="right" id="Remote Host" order="4" weight="0.3297587" />
-      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.23458445" />
+      <window_info anchor="right" id="Database" order="5" sideWeight="0.4985507" weight="0.1769437" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" x="870" y="302" width="514" height="330" id="Documentation" order="7" sideWeight="0.5014493" side_tool="true" type="FLOATING" weight="0.1769437" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,23 +836,10 @@
     <MESSAGE value="格式化SQL" />
     <MESSAGE value="添加服务端与硬件端功能模块交互说明" />
     <MESSAGE value="修改格式" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改格式" />
+    <MESSAGE value="使用boostrap搭建web界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用boostrap搭建web界面" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/building_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/HumitureInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-213">
@@ -704,13 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/HumitureInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -853,16 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -907,81 +1052,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/studentList.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="77" column="15" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#login#0;class#StaffInfoService#0" />
-            <element signature="method#updatePassword#0;class#StaffInfoService#0" />
-            <element signature="method#updateTel#0;class#StaffInfoService#0" />
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1955">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StudentInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1002,22 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#login#0;class#StaffInfoController#0" />
-            <element signature="method#login#0;class#StaffInfoController#0" />
-            <element signature="docComment;method#updatePassword#0;class#StaffInfoController#0" />
-            <element signature="method#updatePassword#0;class#StaffInfoController#0" />
-            <element signature="docComment;method#updateTel#0;class#StaffInfoController#0" />
-            <element signature="method#updateTel#0;class#StaffInfoController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1035,10 +1093,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/StaffInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/css/bootstrap-spacelab.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="149">
+          <caret line="1265" column="1" selection-start-line="1265" selection-start-column="1" selection-end-line="1265" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1049,17 +1107,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/HumitureInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        <state relative-caret-position="864">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/utils/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="921">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/js/charisma.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="173" column="7" lean-forward="true" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#42#48#0" expanded="true" />
+            <element signature="e#97#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-888">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="678">
+          <caret line="70" column="47" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#747#748#0" expanded="true" />
@@ -1068,17 +1179,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/css/bootstrap-spacelab.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/StaffInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="1265" column="1" selection-start-line="1265" selection-start-column="1" selection-end-line="1265" selection-end-column="1" />
+        <state relative-caret-position="459">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="93" column="40" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#StaffInfoService#0" />
+            <element signature="method#updatePassword#0;class#StaffInfoService#0" />
+            <element signature="method#updateTel#0;class#StaffInfoService#0" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#2064#2065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="23" column="96" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="96" />
+        <state relative-caret-position="151">
+          <caret line="69" column="92" lean-forward="true" selection-start-line="69" selection-start-column="92" selection-end-line="69" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#login#0;class#StaffInfoController#0" />
+            <element signature="method#login#0;class#StaffInfoController#0" />
+            <element signature="docComment;method#updatePassword#0;class#StaffInfoController#0" />
+            <element signature="method#updatePassword#0;class#StaffInfoController#0" />
+            <element signature="docComment;method#updateTel#0;class#StaffInfoController#0" />
+            <element signature="method#updateTel#0;class#StaffInfoController#0" />
+          </folding>
         </state>
       </provider>
     </entry>

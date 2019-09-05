@@ -61,4 +61,18 @@ public interface StaffInfoDao {
      * @return
      */
     List<StaffInfo> list();
+
+    /**
+     * 添加职工信息
+     *
+     * @param staffInfo
+     * @return
+     */
+    int add(StaffInfo staffInfo);
+
+    /**
+     * @param num
+     * @return
+     */
+    int delete(@Param("num") int num);
 }

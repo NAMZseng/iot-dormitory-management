@@ -37,4 +37,13 @@
         FROM staff_info
     </select>
 
+    <insert id="add" parameterType="StaffInfo">
+        INSERT INTO staff_info(num, name, tel, building_num, title)
+        VALUES(#{num}, #{name}, #{tel}, #{buildingNum}, #{title})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM staff_info
+        WHERE  num = #{num}
+    </delete>
 </mapper>

@@ -5,7 +5,7 @@
 <div id="content" class="span10">
 	<div>
 		<ul class="breadcrumb">
-			<li><a href="javascript:void(0);">DormitoryManagement</a> <span class="divider">/</span></li>
+			<li><a href="main.html">DormitoryManagement</a> <span class="divider">/</span></li>
 			<li><a href="javascript:void(0);">职工信息概览</a></li>
 		</ul>
 	</div>
@@ -35,7 +35,7 @@
 					<tbody>
 						<c:forEach items="${staffList}" var="staff">
 							<tr>
-								<td><input type="checkbox" class="checkbox" name="delTrain" value="${staff.num}"></td>
+								<td><input type="checkbox" class="checkbox" name="delStaff" value="${staff.num}"></td>
 								<td>${staff.num}</td>
 								<td>${staff.name}</td>
 								<td>${staff.tel}</td>
@@ -60,17 +60,15 @@
 	<div class="modal-body">
 			<ul id="add_formtip"></ul>
                <ul class="topul">
-                  <li><label>工号：</label><input type="text" id="a_staffNum" name="a_staffNum" value="" />
+                  <li><label>工号：</label><input type="text" id="a_staffNum" name="num" value="" />
                     				<span style="color:red;font-weight: bold;">*</span></li>
-                  <li><label>姓名：</label><input type="text" id="a_staffName" name="a_staffName" value="">
+                  <li><label>姓名：</label><input type="text" id="a_staffName" name="name" value="">
                   					<span style="color:red;font-weight: bold;">*</span></li>
-                  <li><label>电话：</label><input type="text" id="a_staffTel" name="a_staffTel" value="">
+                  <li><label>电话：</label><input type="text" id="a_staffTel" name="tel" value="">
                   					<span style="color:red;font-weight: bold;">*</span></li>
-                  <li><label>工作楼号：</label><input type="text" id="a_staffBuildingNum" name="a_staffBuildingNum" value="">
+                  <li><label>工作楼号：</label><input type="text" id="a_staffBuildingNum" name="buildingNum" value="">
                   					<span style="color:red;font-weight: bold;">*</span></li>
-                  <li><label>职称：</label><input type="text" id="a_staffTitle" name="a_staffTitle" value="">
-                  					<span style="color:red;font-weight: bold;">*</span></li>
-                  <li><label>登陆密码：</label><input type="text" id="a_staffPassword" name="a_staffPassword" value="">
+                  <li><label>职称：</label><input type="text" id="a_staffTitle" name="title" value="">
                   					<span style="color:red;font-weight: bold;">*</span></li>
                </ul>
 	</div>

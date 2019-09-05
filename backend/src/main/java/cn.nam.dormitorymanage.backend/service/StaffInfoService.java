@@ -82,4 +82,22 @@ public class StaffInfoService {
     public List<StaffInfo> list(){
         return staffInfoDao.list();
     }
+
+    /**
+     * @param staffInfo
+     * @return
+     */
+    public int add(StaffInfo staffInfo) {
+        return staffInfoDao.add(staffInfo);
+    }
+
+    public int delete(String[] selectIds) {
+        int sum = 0;
+
+        for (int i = 0; i < selectIds.length; i++) {
+            sum += staffInfoDao.delete(Integer.parseInt(selectIds[i]));
+        }
+
+        return sum;
+    }
 }

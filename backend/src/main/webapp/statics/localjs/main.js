@@ -11,7 +11,7 @@ $("#myDelStaffBtn").click(function(){
     	  	$.ajax({
     			type: "POST",
     			url: "staff/delete",
-    			data: {"staffNos":selectIds},
+    			data: {"staffNum":selectIds},
     			dataType: "html",
     	  		timeout:1000,
     			error: function () {
@@ -38,7 +38,6 @@ $('.addStaff').click(function(e){
 	e.preventDefault();
 	$('#addStaffDiv').modal('show');
 });
-
 
 function addStaffFunction(){
 	$("#add_formtip").html("");
@@ -78,5 +77,4 @@ $('.addStaffcancel').click(function(e) {
 	$('#a_staffTel').val('');
 	$('#a_staffBuildingNum').val('');
 	$('#a_staffTitle').val('');
-	$('#a_staffPassword').val('');
 });

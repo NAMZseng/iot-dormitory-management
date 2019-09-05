@@ -68,7 +68,7 @@ public class LoginController {
         if(userObj != null){
             return new ModelAndView("main");
         }else{
-            return new ModelAndView("redirect:login");
+            return new ModelAndView("redirect:/login");
         }
     }
 
