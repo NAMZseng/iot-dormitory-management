@@ -17,10 +17,13 @@
     <!-- 配置控制器的包 -->
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!-- 自动给后面action的方法return的字符串加上前缀(/，即webapp目录下)和后缀(.jsp)，变成一个可用的url地址 -->
-        <property name="prefix" value="/"/>
+        <!-- 自动给后面action的方法return的字符串加上前缀(/，即webapp目录下)和后缀(.js)，变成一个可用的url地址 -->
+        <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!-- 处理静态资源文件 -->
+    <mvc:resources location="/statics/" mapping="/statics/**" />
 
     <!--自动扫描指定包下的注解类，并注册到IOC容器中-->
     <context:component-scan base-package="cn.nam.dormitorymanage.backend.controller"/>

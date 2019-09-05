@@ -3,6 +3,8 @@ package cn.nam.dormitorymanage.backend.dao;
 import cn.nam.dormitorymanage.backend.entity.StaffInfo;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * 职工信息DAO
  *
@@ -52,4 +54,11 @@ public interface StaffInfoDao {
     int updateTel(@Param("oldTel") String oldTel,
                   @Param("password") String password,
                   @Param("newTel") String newTel);
+
+    /**
+     * 显示所有职工信息
+     *
+     * @return
+     */
+    List<StaffInfo> list();
 }

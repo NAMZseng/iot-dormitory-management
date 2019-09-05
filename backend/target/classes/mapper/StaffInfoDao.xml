@@ -32,4 +32,9 @@
             AND password = #{password}
     </update>
 
+    <select id="list" resultType="StaffInfo" >
+        SELECT num, name, tel, building_num, title, password
+        FROM staff_info
+    </select>
+
 </mapper>

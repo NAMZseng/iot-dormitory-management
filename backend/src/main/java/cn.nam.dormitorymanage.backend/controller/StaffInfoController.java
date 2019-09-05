@@ -1,12 +1,18 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.StaffInfo;
+import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.StaffInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author Nanrong Zeng
@@ -75,5 +81,24 @@ public class StaffInfoController {
         newTel = newTel.trim();
 
         return staffInfoService.updateTel(oldTel, password, newTel);
+    }
+
+    /**
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping("list")
+    public String list(Model model, HttpSession session){
+        Object userObj = session.getAttribute("user");
+        if(userObj != null) {
+            // 正确登陆
+            List<StaffInfo> staffList = staffInfoService.list();
+            model.addAttribute("staffList", staffList);
+
+            return "backend/staffList";
+        } else {
+            return "redirect:login";
+        }
     }
 }

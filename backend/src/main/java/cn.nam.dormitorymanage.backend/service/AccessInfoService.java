@@ -44,6 +44,7 @@ public class AccessInfoService {
             Integer preStatus = accessInfoDao.getPreStatus(buildingNum, studentNum);
             if (preStatus == null) {
                 // 该学生为第一次出宿舍楼
+                // 初始化默认学生为都在宿舍里
                 return accessInfoDao.addAccess(buildingNum, studentNum, -1);
             } else {
                 // 状态取反

@@ -5,6 +5,8 @@ import cn.nam.dormitorymanage.backend.entity.StaffInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Nanrong Zeng
  * @version 1.0
@@ -70,5 +72,14 @@ public class StaffInfoService {
             // 手机号已存在
             return 0;
         }
+    }
+
+    /**
+     * 显示所有职工信息
+     *
+     * @return
+     */
+    public List<StaffInfo> list(){
+        return staffInfoDao.list();
     }
 }
