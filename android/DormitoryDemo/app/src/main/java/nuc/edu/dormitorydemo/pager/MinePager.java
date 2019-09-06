@@ -139,7 +139,7 @@ public class MinePager extends BasePager {
                                         Toast.makeText(context, "修改成功，请重新登录！", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(context, LoginActivity.class);
                                         context.startActivity(intent);
-                                        this.onFinished();
+                                        ((Activity)context).finish();
                                     }else{
                                         Toast.makeText(context, "手机号或密码错误！", Toast.LENGTH_SHORT).show();
                                     }
@@ -183,7 +183,7 @@ public class MinePager extends BasePager {
                                         Toast.makeText(x.app(), "修改成功，请重新登录！", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(context, LoginActivity.class);
                                         context.startActivity(intent);
-                                        this.onFinished();
+                                        ((Activity)context).finish();
                                     }else if(result.equals("-1")){
                                         Toast.makeText(x.app(), "密码不正确！", Toast.LENGTH_SHORT).show();
                                     }
