@@ -21,27 +21,39 @@ public class LoginController {
     private final String loginName = "admin";
     private final String loginPwd = "admin";
 
+    /**
+     * 登陆界面入口
+     *
+     * @return
+     */
     @RequestMapping("login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
+    /**
+     * 登陆判断处理
+     *
+     * @param user
+     * @param session
+     * @return
+     */
     @RequestMapping("logined.html")
     @ResponseBody
-    public String logined(@RequestParam String user,HttpSession session){
+    public String logined(@RequestParam String user, HttpSession session) {
 
-        if(user == null || "".equals(user)){
+        if (user == null || "".equals(user)) {
             return "noData";
-        }else{
+        } else {
             User userObj = JSONObject.parseObject(user, User.class);
             try {
-                if(!loginName.equals(userObj.getUsername())){
+                if (!loginName.equals(userObj.getUsername())) {
                     return "noUsername";
-                }else{
-                    if(loginPwd.equals(userObj.getPassword())){
+                } else {
+                    if (loginPwd.equals(userObj.getPassword())) {
                         session.setAttribute("user", userObj);
                         return "success";
-                    }else{
+                    } else {
                         return "pwdError";
                     }
                 }
@@ -52,8 +64,14 @@ public class LoginController {
         }
     }
 
+    /**
+     * 登出
+     *
+     * @param session
+     * @return
+     */
     @RequestMapping("logout.html")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
 
         session.removeAttribute("user");
         session.invalidate();
@@ -61,13 +79,20 @@ public class LoginController {
         return "redirect:login";
     }
 
+    /**
+     * web主页面入口
+     *
+     * @param model
+     * @param session
+     * @return
+     */
     @RequestMapping("main.html")
-    public ModelAndView toMainPage(Model model,HttpSession session){
+    public ModelAndView toMainPage(Model model, HttpSession session) {
 
         Object userObj = session.getAttribute("user");
-        if(userObj != null){
+        if (userObj != null) {
             return new ModelAndView("main");
-        }else{
+        } else {
             return new ModelAndView("redirect:/login");
         }
     }

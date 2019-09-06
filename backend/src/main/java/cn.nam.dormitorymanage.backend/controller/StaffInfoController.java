@@ -84,6 +84,8 @@ public class StaffInfoController {
     }
 
     /**
+     * 获取所有职工信息
+     *
      * @param model
      * @param session
      * @return
@@ -112,6 +114,8 @@ public class StaffInfoController {
     }
 
     /**
+     * 添加职工
+     *
      * @param session
      * @param staffInfo
      * @return
@@ -124,6 +128,8 @@ public class StaffInfoController {
     }
 
     /**
+     * 删除职工
+     *
      * @param model
      * @param staffNum
      * @return

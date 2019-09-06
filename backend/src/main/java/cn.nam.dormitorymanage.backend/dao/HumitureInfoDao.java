@@ -37,13 +37,17 @@ public interface HumitureInfoDao {
                                     @Param("dawnTime") String dawnTime);
 
     /**
-     * @return
+     * 列出所有采集的温湿度记录
+     *
+     * @return List<HumitureInfo>
      */
     List<HumitureInfo> list();
 
     /**
-     * @param collectTime
-     * @return
+     * 根据采集时间，删除对应的记录
+     *
+     * @param collectTime 采集时间
+     * @return 删除成功返回1，否则0
      */
-    int delete(@Param("collectTime")String collectTime);
+    int delete(@Param("collectTime") String collectTime);
 }

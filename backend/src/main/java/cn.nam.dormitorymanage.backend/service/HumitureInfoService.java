@@ -39,15 +39,19 @@ public class HumitureInfoService {
     }
 
     /**
-     * @return
+     * 列出所有采集的温湿度记录
+     *
+     * @return List<HumitureInfo>
      */
-    public List<HumitureInfo> list(){
+    public List<HumitureInfo> list() {
         return humitureInfoDao.list();
     }
 
     /**
-     * @param selectIds
-     * @return
+     * 根据采集时间，删除对应的记录
+     *
+     * @param selectIds 待删除记录的时间数组
+     * @return 删除成功返回总删除条数，否则0
      */
     public int delete(String[] selectIds) {
         int sum = 0;

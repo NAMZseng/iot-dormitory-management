@@ -2,7 +2,6 @@ package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
 import cn.nam.dormitorymanage.backend.entity.User;
-import cn.nam.dormitorymanage.backend.service.StaffInfoService;
 import cn.nam.dormitorymanage.backend.service.StudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +39,8 @@ public class StudentInfoController {
     }
 
     /**
+     * 获取所有学生信息
+     *
      * @param model
      * @param session
      * @return
@@ -60,6 +61,8 @@ public class StudentInfoController {
     }
 
     /**
+     * 添加学生
+     *
      * @param session
      * @param studentInfo
      * @return
@@ -72,6 +75,8 @@ public class StudentInfoController {
     }
 
     /**
+     * 删除学生
+     *
      * @param model
      * @param staffNum
      * @return

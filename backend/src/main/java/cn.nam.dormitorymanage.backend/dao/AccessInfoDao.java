@@ -95,24 +95,32 @@ public interface AccessInfoDao {
     List<StudentInfo> getOutStudentInfo(@Param("buildingNum") int buildingNum);
 
     /**
-     * @return
+     * 列出所有被阻访问记录
+     *
+     * @return 返回封装了被阻访问信息的List<BlockInfo>
      */
     List<BlockInfo> listBlock();
 
     /**
-     * @return
+     * 列出所有出入记录
+     *
+     * @return 返回封装了出入记录信息的List<AccessInfo>
      */
     List<AccessInfo> listAccess();
 
     /**
-     * @param accessTime
-     * @return
+     * 根据时间删除被阻记录
+     *
+     * @param accessTime 访问时间
+     * @return 删除成功返回1，否则0
      */
-    int deleteBlock(@Param("accessTime")String accessTime);
+    int deleteBlock(@Param("accessTime") String accessTime);
 
     /**
-     * @param accessTime
-     * @return
+     * 根据时间删除出入记录
+     *
+     * @param accessTime 访问时间
+     * @return 删除成功返回1，否则0
      */
-    int deleteAccess(@Param("accessTime")String accessTime);
+    int deleteAccess(@Param("accessTime") String accessTime);
 }

@@ -58,21 +58,23 @@ public interface StaffInfoDao {
     /**
      * 显示所有职工信息
      *
-     * @return
+     * @return List<StaffInfo>
      */
     List<StaffInfo> list();
 
     /**
      * 添加职工信息
      *
-     * @param staffInfo
-     * @return
+     * @param staffInfo 封装了职工信息的类对象
+     * @return 添加成功返回1，否则0
      */
     int add(StaffInfo staffInfo);
 
     /**
-     * @param num
-     * @return
+     * 删除工号对应的职工信息
+     *
+     * @param num 职工工号
+     * @return 删除成功返回1，否则0
      */
     int delete(@Param("num") int num);
 }

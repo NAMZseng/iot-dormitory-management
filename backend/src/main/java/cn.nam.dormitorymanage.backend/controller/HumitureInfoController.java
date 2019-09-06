@@ -59,6 +59,13 @@ public class HumitureInfoController {
         return humitureInfoService.getTodayData(buildingNum, dawnTime);
     }
 
+    /**
+     * 获取所有采集记录
+     *
+     * @param model
+     * @param session
+     * @return
+     */
     @RequestMapping("list")
     public String list(Model model, HttpSession session) {
         User userObj = (User) session.getAttribute("user");
@@ -75,6 +82,8 @@ public class HumitureInfoController {
     }
 
     /**
+     * 删除记录
+     *
      * @param model
      * @param collectTime
      * @return

@@ -92,6 +92,8 @@ public class AccessInfoController {
     }
 
     /**
+     * 获取所有被阻访问记录
+     *
      * @param model
      * @param session
      * @return
@@ -113,6 +115,8 @@ public class AccessInfoController {
 
 
     /**
+     * 获取所有出入记录
+     *
      * @param model
      * @param session
      * @return
@@ -133,6 +137,8 @@ public class AccessInfoController {
     }
 
     /**
+     * 删除被阻记录
+     *
      * @param model
      * @param accessTime
      * @return
@@ -158,6 +164,8 @@ public class AccessInfoController {
     }
 
     /**
+     * 删除出入记录
+     *
      * @param model
      * @param accessTime
      * @return

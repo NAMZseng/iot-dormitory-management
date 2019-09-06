@@ -28,21 +28,30 @@ public class StudentInfoService {
     }
 
     /**
+     * 显示所有学生信息
      *
-     * @return
+     * @return List<StudentInfo>
      */
-    public List<StudentInfo> list(){
+    public List<StudentInfo> list() {
         return studentInfoDao.list();
     }
 
     /**
-     * @param studentInfo
-     * @return
+     * 添加学生信息
+     *
+     * @param studentInfo 封装了学生信息的类对象
+     * @return 添加成功返回1，否则0
      */
     public int add(StudentInfo studentInfo) {
         return studentInfoDao.add(studentInfo);
     }
 
+    /**
+     * 删除学号对应的学生信息
+     *
+     * @param selectIds 待删除学生的学号数组
+     * @return 删除成功返回总删除条数，否则0
+     */
     public int delete(String[] selectIds) {
         int sum = 0;
 

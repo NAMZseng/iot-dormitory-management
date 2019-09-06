@@ -103,22 +103,28 @@ public class AccessInfoService {
     }
 
     /**
-     * @return
+     * 列出所有被阻访问记录
+     *
+     * @return 返回封装了被阻访问信息的List<BlockInfo>
      */
     public List<BlockInfo> listBlock() {
         return accessInfoDao.listBlock();
     }
 
     /**
-     * @return
+     * 列出所有出入记录
+     *
+     * @return 返回封装了出入记录信息的List<AccessInfo>
      */
     public List<AccessInfo> listAccess() {
         return accessInfoDao.listAccess();
     }
 
     /**
-     * @param selectIds
-     * @return
+     * 根据访问时间，删除出入记录
+     *
+     * @param selectIds 待删除记录的时间数组
+     * @return 删除成功返回总删除条数，否则0
      */
     public int deleteAccess(String[] selectIds) {
         int sum = 0;
@@ -131,8 +137,10 @@ public class AccessInfoService {
     }
 
     /**
-     * @param selectIds
-     * @return
+     * 根据访问时间，删除被阻记录
+     *
+     * @param selectIds 待删除记录的时间数组
+     * @return 删除成功返回总删除条数，否则0
      */
     public int deleteBlock(String[] selectIds) {
         int sum = 0;

@@ -51,9 +51,9 @@ public class StaffInfoService {
     /**
      * 修改手机号
      *
-     * @param oldTel 旧电话
+     * @param oldTel   旧电话
      * @param password 登陆密码
-     * @param newTel 新电话
+     * @param newTel   新电话
      * @return 新电话已注册返回0；修改成功返回1，旧手机与密码不匹配返回-1
      */
     public int updateTel(String oldTel, String password, String newTel) {
@@ -77,20 +77,28 @@ public class StaffInfoService {
     /**
      * 显示所有职工信息
      *
-     * @return
+     * @return List<StaffInfo>
      */
-    public List<StaffInfo> list(){
+    public List<StaffInfo> list() {
         return staffInfoDao.list();
     }
 
     /**
-     * @param staffInfo
-     * @return
+     * 添加职工信息
+     *
+     * @param staffInfo 封装了职工信息的类对象
+     * @return 添加成功返回1，否则0
      */
     public int add(StaffInfo staffInfo) {
         return staffInfoDao.add(staffInfo);
     }
 
+    /**
+     * 删除工号对应的职工信息
+     *
+     * @param selectIds 待删除的职工的工号数组
+     * @return 删除成功返回总删除条数，否则0
+     */
     public int delete(String[] selectIds) {
         int sum = 0;
 
