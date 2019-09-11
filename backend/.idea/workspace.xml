@@ -6,21 +6,28 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="">
+    <list default="true" id="17765f97-283a-432a-9b9c-5060f76a5960" name="Default Changelist" comment="添加Web端截图">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/HumitureInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/HumitureInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StudentInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StudentInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/AccessInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/AccessInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/HumitureInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/HumitureInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StudentInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StudentInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/HumitureInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/HumitureInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StudentInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StudentInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/AccessInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/AccessInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/HumitureInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/HumitureInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StudentInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/controller/StudentInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/HumitureInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/HumitureInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StudentInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/cn/nam/dormitorymanage/backend/service/StudentInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/mapper/HumitureInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DormitoryManage/WEB-INF/classes/mapper/HumitureInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/AccessInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/AccessInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/HumitureInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/HumitureInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StaffInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StudentInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/controller/StudentInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/AccessInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/HumitureInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/HumitureInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StaffInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StudentInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/dormitorymanage/backend/service/StudentInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HumitureInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/HumitureInfoDao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +67,26 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,6 +116,7 @@
       <find>access</find>
       <find>Stu</find>
       <find>studentNum</find>
+      <find>DECS</find>
     </findStrings>
     <replaceStrings>
       <replace>${spring.version}</replace>
@@ -105,6 +132,7 @@
       <replace>accesss</replace>
       <replace>block</replace>
       <replace>humiture</replace>
+      <replace>DESC</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -149,17 +177,12 @@
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/AccessInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/HumitureInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/head.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/StudentInfoDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/staffList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/studentList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/statics/localjs/main.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/AccessInfoDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/accessList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/humitureList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/blockList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/AccessInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StudentInfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StaffInfoController.java" />
@@ -173,6 +196,11 @@
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/HumitureInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StaffInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/service/StudentInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/StudentInfoDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/AccessInfoDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql" />
       </list>
     </option>
   </component>
@@ -191,8 +219,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -203,8 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,16 +289,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cn.nam.dormitorymanage.backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn.nam.dormitorymanage.backend" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -286,6 +303,22 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,7 +336,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="localjs" type="462c0819:PsiDirectoryNode" />
+              <item name="localcss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -346,6 +379,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,13 +395,13 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2841226" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -502,16 +537,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23123324" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22855228" />
       <window_info x="237" y="241" width="505" height="257" id="Structure" order="2" weight="0.21849866" />
       <window_info id="Hadoop FileSystem" order="3" weight="0.3297587" />
       <window_info id="Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
-      <window_info anchor="bottom" id="Database Console" order="1" weight="0.3652174" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.35190615" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="1" visible="true" weight="0.3652174" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.31304348" />
       <window_info anchor="bottom" id="File Transfer" order="3" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3289855" />
@@ -536,14 +572,14 @@
     </layout>
     <layout-to-restore>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23123324" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22855228" />
       <window_info x="237" y="241" width="505" height="257" id="Structure" order="2" weight="0.21849866" />
       <window_info id="Hadoop FileSystem" order="3" weight="0.3297587" />
       <window_info id="Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Database Console" order="1" weight="0.3652174" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.35190615" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.35072464" />
       <window_info anchor="bottom" id="File Transfer" order="3" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3289855" />
@@ -571,8 +607,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新pom依赖" />
-    <MESSAGE value="配置web.xml" />
     <MESSAGE value="更新spring配置" />
     <MESSAGE value="建库建表backend_test" />
     <MESSAGE value="建库建表" />
@@ -596,7 +630,9 @@
     <MESSAGE value="完成Staff_info表的增删查" />
     <MESSAGE value="完成Web端所有操作" />
     <MESSAGE value="纠正之前错改的属性名" />
-    <option name="LAST_COMMIT_MESSAGE" value="纠正之前错改的属性名" />
+    <MESSAGE value="完善web端相关代码注释" />
+    <MESSAGE value="添加Web端截图" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加Web端截图" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -670,20 +706,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/staff_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/building_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/staff_info" />
+    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/building_info" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/StudentInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -691,24 +715,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/student_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://628b1fa1-7bc5-436f-8692-fb0ce8478bb1/schema/dormitory/table/student_info" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/AccessInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -754,20 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/backend/accessList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -793,20 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="691">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AccessInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
@@ -841,16 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/StudentInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1555">
@@ -865,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/HumitureInfoDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -883,13 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/AccessCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -981,6 +940,65 @@
             <element signature="e#5844#6667#0" />
             <element signature="e#6707#7526#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/entity/AccessCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/controller/AccessInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-497">
+          <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/dao/StaffInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StaffInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AccessInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1259">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn.nam.dormitorymanage.backend/sql/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/HumitureInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
         </state>
       </provider>
     </entry>

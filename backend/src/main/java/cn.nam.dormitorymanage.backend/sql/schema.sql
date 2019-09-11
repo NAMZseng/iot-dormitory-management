@@ -52,9 +52,6 @@ create table card_info(
   primary key(card_num)
 ) engine=innodb default charset=utf8 comment '一卡通注册信息表';
 
-insert into card_info VALUES (16912536,1607094215);
-insert into card_info VALUES (1351113628,1607094235);
-
 create table sensors_info(
    `mac_address` char(16) comment '传感器的MAC地址',
    `building_num` tinyint comment '所在的宿舍楼号',

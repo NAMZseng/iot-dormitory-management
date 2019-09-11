@@ -25,6 +25,7 @@
             ,humidity
         FROM sensors_info a INNER JOIN humiture_info b
             ON a.mac_address = b.mac_address
+        LIMIT 800
     </select>
 
     <delete id="delete">
