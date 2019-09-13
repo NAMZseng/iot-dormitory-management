@@ -1,7 +1,6 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.StaffInfo;
-import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.StaffInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,24 +91,10 @@ public class StaffInfoController {
      */
     @RequestMapping("list")
     public String list(Model model, HttpSession session) {
+        List<StaffInfo> staffList = staffInfoService.list();
+        model.addAttribute("staffList", staffList);
 
-//        未配置栏截器前时，需在每个方法里加上下面处理
-        User userObj = (User) session.getAttribute("user");
-        if (userObj != null) {
-            // 正确登陆
-            List<StaffInfo> staffList = staffInfoService.list();
-            model.addAttribute("staffList", staffList);
-
-            return "backend/staffList";
-
-        } else {
-            return "redirect:/login";
-        }
-//
-//        List<StaffInfo> staffList = staffInfoService.list();
-//        model.addAttribute("staffList", staffList);
-//
-//        return "backend/staffList";
+        return "backend/staffList";
 
     }
 
@@ -117,7 +102,7 @@ public class StaffInfoController {
      * 添加职工
      *
      * @param session
-     * @param staffInfo
+     * @param staffInfo1
      * @return
      */
     @RequestMapping(value = "add", method = RequestMethod.POST)

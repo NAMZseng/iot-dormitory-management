@@ -14,16 +14,15 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  */
 public class LoginInterceptor implements HandlerInterceptor {
-    private final String loginName = "admin";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         User user = (User) request.getSession().getAttribute("user");
-        if (user != null && loginName.equals(user.getUsername())) {
+        if (user != null) {
             return true;
         }
         // 没有登陆，拦截，跳转登陆界面
-        response.sendRedirect(request.getContextPath() + "/login");
+        response.sendRedirect("/login");
         return false;
     }
 

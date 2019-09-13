@@ -12,27 +12,32 @@
     <!-- 自动扫描该包 -->
     <mvc:annotation-driven/>
 
+    <!--自动扫描指定包下的注解类，并注册到IOC容器中-->
+    <context:component-scan base-package="cn.nam.dormitorymanage.backend.controller"/>
+
     <mvc:default-servlet-handler/>
 
     <!-- 处理静态资源文件 -->
     <mvc:resources location="/statics/" mapping="/statics/**" />
 
-    <!--&lt;!&ndash; 注册拦截器 &ndash;&gt;-->
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/WEB-INF/pages/backend/*"/>-->
-            <!--<mvc:mapping path="/WEB-INF/pages/main"/>-->
-            <!--<bean class="cn.nam.dormitorymanage.backend.utils.LoginInterceptor"/>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <!-- 注册拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--登记需要拦截的路由-->
+            <mvc:mapping path="/access/*"/>
+            <mvc:mapping path="/humiture/*"/>
+            <mvc:mapping path="/staff/*"/>
+            <mvc:mapping path="/student/*"/>
+            <mvc:mapping path="/main.html"/>
+            <!--登记执行栏截操作的类-->
+            <bean class="cn.nam.dormitorymanage.backend.utils.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!--自动扫描指定包下的注解类，并注册到IOC容器中-->
-    <context:component-scan base-package="cn.nam.dormitorymanage.backend.controller"/>
 
 </beans>

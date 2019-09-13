@@ -89,12 +89,7 @@ public class LoginController {
     @RequestMapping("main.html")
     public ModelAndView toMainPage(Model model, HttpSession session) {
 
-        Object userObj = session.getAttribute("user");
-        if (userObj != null) {
-            return new ModelAndView("main");
-        } else {
-            return new ModelAndView("redirect:/login");
-        }
+        return new ModelAndView("main");
     }
 
 }

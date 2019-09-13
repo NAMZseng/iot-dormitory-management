@@ -1,7 +1,6 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
-import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.StudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,17 +46,10 @@ public class StudentInfoController {
      */
     @RequestMapping("list")
     public String list(Model model, HttpSession session) {
-        User userObj = (User) session.getAttribute("user");
-        if (userObj != null) {
-            // 正确登陆
-            List<StudentInfo> studentList = studentInfoService.list();
-            model.addAttribute("studentList", studentList);
+        List<StudentInfo> studentList = studentInfoService.list();
+        model.addAttribute("studentList", studentList);
 
-            return "backend/studentList";
-
-        } else {
-            return "redirect:/login";
-        }
+        return "backend/studentList";
     }
 
     /**

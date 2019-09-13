@@ -1,7 +1,6 @@
 package cn.nam.dormitorymanage.backend.controller;
 
 import cn.nam.dormitorymanage.backend.entity.HumitureInfo;
-import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.HumitureInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,17 +67,10 @@ public class HumitureInfoController {
      */
     @RequestMapping("list")
     public String list(Model model, HttpSession session) {
-        User userObj = (User) session.getAttribute("user");
-        if (userObj != null) {
-            // 正确登陆
-            List<HumitureInfo> humitureList = humitureInfoService.list();
-            model.addAttribute("humitureList", humitureList);
+        List<HumitureInfo> humitureList = humitureInfoService.list();
+        model.addAttribute("humitureList", humitureList);
 
-            return "backend/humitureList";
-
-        } else {
-            return "redirect:/login";
-        }
+        return "backend/humitureList";
     }
 
     /**

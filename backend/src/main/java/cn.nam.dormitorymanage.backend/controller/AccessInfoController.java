@@ -3,7 +3,6 @@ package cn.nam.dormitorymanage.backend.controller;
 import cn.nam.dormitorymanage.backend.entity.AccessInfo;
 import cn.nam.dormitorymanage.backend.entity.BlockInfo;
 import cn.nam.dormitorymanage.backend.entity.StudentInfo;
-import cn.nam.dormitorymanage.backend.entity.User;
 import cn.nam.dormitorymanage.backend.service.AccessInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -100,17 +99,10 @@ public class AccessInfoController {
      */
     @RequestMapping("listBlock")
     public String listBlock(Model model, HttpSession session) {
-        User userObj = (User) session.getAttribute("user");
-        if (userObj != null) {
-            // 正确登陆
-            List<BlockInfo> blockList = accessInfoService.listBlock();
-            model.addAttribute("blockList", blockList);
+        List<BlockInfo> blockList = accessInfoService.listBlock();
+        model.addAttribute("blockList", blockList);
 
-            return "backend/blockList";
-
-        } else {
-            return "redirect:/login";
-        }
+        return "backend/blockList";
     }
 
 
@@ -123,17 +115,10 @@ public class AccessInfoController {
      */
     @RequestMapping("listAccess")
     public String listAccess(Model model, HttpSession session) {
-        User userObj = (User) session.getAttribute("user");
-        if (userObj != null) {
-            // 正确登陆
-            List<AccessInfo> accessList = accessInfoService.listAccess();
-            model.addAttribute("accessList", accessList);
+        List<AccessInfo> accessList = accessInfoService.listAccess();
+        model.addAttribute("accessList", accessList);
 
-            return "backend/accessList";
-
-        } else {
-            return "redirect:/login";
-        }
+        return "backend/accessList";
     }
 
     /**
